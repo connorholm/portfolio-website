@@ -12,11 +12,32 @@ import {
   Slogan,
   SocialContainer,
   SocialIconsContainer,
+  AvatarContainer,
 } from "./FooterStyles";
+import { Avatar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  large: {
+    width: theme.spacing(13),
+    height: theme.spacing(13),
+    marginBottom: "20px",
+    justifyContent: "center",
+    marginTop: "15px"
+  },
+}));
 const Footer = () => {
+  const classes = useStyles();
+
   return (
     <FooterWrapper>
+      <AvatarContainer>
       <LinkList>
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
@@ -29,6 +50,8 @@ const Footer = () => {
           </LinkItem>
         </LinkColumn>
       </LinkList>
+      <Avatar alt="Profile Pic" src="/images/profile-picture.JPG" className={classes.large}/>
+      </AvatarContainer>
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>Redefining the Future Through Coding</Slogan>
