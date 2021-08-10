@@ -50,7 +50,7 @@ const Footer = () => {
           </LinkItem>
         </LinkColumn>
       </LinkList>
-      <Avatar alt="Profile Pic" src="/images/profile-picture.JPG" className={classes.large}/>
+      <Avatar alt="Profile Pic" src="/images/profile-pic.jpg" className={classes.large}/>
       </AvatarContainer>
       <SocialIconsContainer>
         <CompanyContainer>
