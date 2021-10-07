@@ -1,12 +1,21 @@
 export const projects = [
   {
+    title: "Daily Dose of Laughter",
+    description: "This website displays jokes to users! An authenticated user is able to publish jokes and interact with other people's posts. The frontend was build with React and the backend is a fully functionally Express API with a MongoDB database.",
+    image: '/images/joke.png',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
+    source: 'https://github.com/connorholm/jokes_frontend',
+    visit: 'https://jokes-frontend.herokuapp.com/',
+    id: 0,
+  },
+  {
     title: 'Target Practice Mania',
     description: "This app is a game I created for the App Store. It uses Apple's SceneKit to allow the user to interact with 3D shapes created in Blender. The app also has a leaderboard system so the user can compete with others.",
       image: '/images/target-app.png',
       tags: ['Swift', 'SceneKit', 'GameCenter', 'Blender'],
     source: 'https://github.com/connorholm/TargetPractice',
     visit: 'https://apps.apple.com/us/app/target-practice-mania/id1551670619',
-    id: 0,
+    id: 1,
   },
   {
     title: 'COVID-19 Information Provider',
@@ -15,7 +24,7 @@ export const projects = [
     tags: ['Flask', 'BeautifulSoup', 'HTML', 'CSS'],
     source: 'https://github.com/connorholm/Covid-19-Website',
     visit: 'https://www.youtube.com/watch?v=JMSGNJM0_Kk',
-    id: 1,
+    id: 2,
   },
   {
     title: 'EPHS App',
@@ -24,16 +33,16 @@ export const projects = [
       tags: ['SwiftUI', 'APIs'],
     source: 'https://github.com/connorholm/ephsapp2020',
     visit: 'https://apps.apple.com/us/app/ephs/id1540598932',
-    id: 2,
+    id: 3,
   },
   {
     title: 'Python Chat App',
     description: "In this project, I coded a terminal and gui based chat application. It communicates through a public ubuntu server to allow for anyone to communicate with each other.",
     image: '/images/chat-app.png',
     tags: ['Python', 'TKinter', 'Sockets'],
-    source: 'hhttps://github.com/connorholm/ChatApp',
+    source: 'https://github.com/connorholm/ChatApp',
     visit: '',
-    id: 3,
+    id: 4,
   },
 ];
 

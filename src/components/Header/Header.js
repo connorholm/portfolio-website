@@ -12,7 +12,7 @@ return (
     <Div1>
       <Link href="/" >
         <a style={{ display: "flex", alignItems: "center", color: 'white', marginBottom: '20px' }}>
-        <BiCodeCurly size="3rem"/> <Span>Portfolio</Span>
+        <BiCodeCurly size="3rem"/> <Span>&nbsp;Connor Holm</Span>
         </a>
       </Link>
     </Div1>
@@ -39,7 +39,7 @@ return (
       </li>
       <li>
         <Link href="/Resume-ConnorHolm.pdf">
-          <NavLink>Resume</NavLink>
+          <NavLink>Resumé</NavLink>
         </Link>
       </li>
     </Div2>
