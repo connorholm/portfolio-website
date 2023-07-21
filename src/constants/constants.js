@@ -54,3 +54,45 @@ export const TimeLineData = [
   { year: 2021, text: 'Started Android Development for the Jed Mahonis Group', },
   { year: 2021, text: 'Always Learning More!', },
 ];
+
+export const education = [
+  { school: 'Eden Prairie High School', 
+    degree: 'High School Diploma', 
+    graducation: '2021', 
+    image: '/images/high-school.jpg',
+    classes: [
+      "AP Computer Science Principles",
+      "AP Java",
+      "AP Calculus AB",
+      "AP Calculus BC",
+      "Multivariable Calculus",
+      "AP Statistics",
+      "AP Physics C",
+      "AP Chemistry",
+      "AP Macro Economics",
+      "iOS App Development",
+      "Advanced iOS App Development",
+      "Cyber Security",
+    ]
+  },
+  { school: 'University of Minnesota',
+    degree: 'BS in Computer Science',
+    graducation: 'Fall 2023',
+    image: '/images/university.jpg',
+    classes: [
+      'CSCI 1133 - Intro to Computing and Programming Concepts',
+      'CSCI 1933 - Intro to Algorithms and Data Structures',
+      'CSCI 2011 - Discrete Structures of Computer Science',
+      'CSCI 2021 - Machine Architecture and Organization',
+      'CSCI 2033 - Elementary Computational Linear Algebra',
+      'CSCI 2041 - Advanced Programming Principles',
+      'CSCI 4041 - Algorithms and Data Structures',
+      'CSCI 4061 - Introduction to Operating Systems',
+      'CSCI 4511W - Introduction to Artificial Intelligence',
+      'CSCI 4707 - Practice of Database Systems',
+      'CSCI 5421 - Advanced Algorithms and Data Structures',
+      'CSCI 5521 - Introduction to Machine Learning',
+      'STAT 3021 - Introduction to Probability and Statistics'
+    ]
+  }
+]

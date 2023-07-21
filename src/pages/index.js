@@ -8,6 +8,7 @@ import Timeline from '../components/TimeLine/TimeLine';
 import Current from '../components/Current/Current'
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
+import Education from "../components/Education/Education";
 
 const Home = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const Home = () => {
       <Technologies />
       <Timeline />
       <Acomplishments />
+      <Education />
       <Current />
     </Layout>
   );
