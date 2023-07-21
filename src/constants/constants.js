@@ -1,3 +1,11 @@
+export const typewriter_list = [
+  "AI/ML",
+  "Mobile Dev",
+  "Web Dev",
+  "APIs",
+  "Cloud Services"
+];
+
 export const projects = [
   {
     title: "Daily Dose of Laughter",
