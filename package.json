@@ -5,12 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.1",
+    "gh-pages": "^5.0.0",
     "next": "^13.4.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
