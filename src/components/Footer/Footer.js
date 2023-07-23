@@ -14,6 +14,7 @@ import {
   SocialIconsContainer,
   AvatarContainer,
 } from "./FooterStyles";
+import { Avatar } from "@mui/material";
 
 const Footer = () => {
 
@@ -30,6 +31,9 @@ const Footer = () => {
           <LinkItem href="mailto:connorjholm@gmail.com">
             connorjholm@gmail.com
           </LinkItem>
+        </LinkColumn>
+        <LinkColumn>
+          <Avatar src="/images/square_pfp.jpg" alt="profile picture" sx={{ width: 100, height: 100 }} />
         </LinkColumn>
       </LinkList>
       </AvatarContainer>

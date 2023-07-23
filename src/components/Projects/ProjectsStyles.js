@@ -28,6 +28,9 @@ export const BlogCard = styled.div`
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
   width: 400px;
+  &:hover {
+    box-shadow: 3px 3px 30px rgba(155, 155, 155, 0.5);
+  }
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }

@@ -48,7 +48,7 @@ const Timeline = () => {
       <br />
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      The purpose of my work is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+      The purpose of my work is to make an impact through coding. I am constantly learning and growing my skills to be able to build awesome applications for awesome people.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

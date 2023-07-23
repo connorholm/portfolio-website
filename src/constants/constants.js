@@ -6,6 +6,14 @@ export const typewriter_list = [
   "Cloud Services"
 ];
 
+
+export const accomplishments = [
+  { number: "5+", text: 'Years of Programming Experience'},
+  { number: 10, text: "Programming Languages" },
+  { number: 4, text: 'Mobile Applications'},
+  { number: 3, text: "Machine Learning Projects"},
+];
+
 export const projects = [
   {
     title: "Tiktok Watermark Remover",
@@ -18,15 +26,6 @@ export const projects = [
 
   },
   {
-    title: "Little Free Library Android App",
-    description: "Helped build the Android app. Built out mapping features (Google Maps API), authentication, and the UI screens. Worked with configuring profile picutres and user information.",
-    image: '/images/little-free-library.jpeg',
-    tags: ["Android", "Kotlin", "Google Maps Library", "APIs"],
-    source: '',
-    visit: 'https://littlefreelibrary.org/app/',
-    id: 11,
-  },
-  {
     title: "Flappy Bird Genetic Algorithm",
     description: "Modified the Flappy Bird game to use a genetic algorithm to train the bird to play the game. The bird starts off with random weights and then the algorithm trains the bird to play the game.",
     image: '/images/flappybird.png',
@@ -34,6 +33,15 @@ export const projects = [
     source: 'https://github.com/connorholm/flappybird-genetic-algorithm',
     visit: "/flappybird-genetic-algorithm.pdf",
     id: 10,
+  },
+  {
+    title: "Little Free Library Android App",
+    description: "Helped build the Android app. Built out mapping features (Google Maps API), authentication, and the UI screens. Worked with configuring profile picutres and user information.",
+    image: '/images/little-free-library.jpeg',
+    tags: ["Android", "Kotlin", "Google Maps Library", "APIs"],
+    source: '',
+    visit: 'https://littlefreelibrary.org/app/',
+    id: 11,
   },
   {
     title: "Daily Dose of Laughter",
@@ -83,12 +91,15 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2019, text: 'Started my journey, learned Java through a highschool class', },
-  { year: 2020, text: 'Took an iOS App Development, and build EPHS app', },
+  { year: 2018, text: 'Started my journey, learned Java through a highschool class', },
+  { year: 2020, text: 'Took an iOS App Development class, and build EPHS app', },
   { year: 2021, text: 'Released Target Practice Mania', },
   { year: 2021, text: 'Won Congressional App Challenege for district MN-03 for COVID-19 Info Provider', },
-  { year: 2021, text: 'Started Android Development for the Jed Mahonis Group', },
-  { year: 2021, text: 'Always Learning More!', },
+  { year: 2021, text: 'Helped Build Out Little Free Library Android App', },
+  { year: 2022, text: 'Used Ruby on Rails to build out an appointment app\'s API', },
+  { year: 2023, text: 'Took interest in AI, built a Flappy Bird agent using a genetic algorithm', },
+  { year: 2023, text: 'Used CNN\'s to build use machine learning applications for removing watermarks', },
+  { year: 2023, text: 'Always Learning More!', },
 ];
 
 export const education = [

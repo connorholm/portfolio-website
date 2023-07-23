@@ -13,11 +13,10 @@ function Current() {
       <br />
       <SectionTitle>Current Projects</SectionTitle>
       <SectionText>
-         • Building a joke MERN application to allow user to post jokes for
-          others to see.
-          <br />
-          • Working to develop two different Android applications for Jed
-          Mahonis Group's clients. Features include Google Maps, API calls for Auth/Data, Payments, and Video Calls. . .
+         • Working in the medical space to better navigate documents using various forms of machine learning 
+         (optical character recognition, object detection models, NLP, etc).
+         <br />
+         • Deploying and launching a web application of the machine learning model that can remove watermarks from videos. 
       </SectionText>
     </Section>
   );

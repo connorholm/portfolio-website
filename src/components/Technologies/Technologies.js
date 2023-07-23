@@ -13,7 +13,7 @@ const Technologies = () =>  (
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
       I've learned a range of technologies in the programming world.
-      From Mobile To Web Development
+      From Machine Learning To App Development
     </SectionText>
     <List>
       <ListItem>
@@ -84,7 +84,7 @@ const Technologies = () =>  (
             Programming Langauges
           </ListTitle>
           <ListParagraph>
-            Python, Java, C, Kotlin, Swift, Javascript, Ruby, Ocaml, and MiniLang.
+            Python, Java, C, Kotlin, Swift, Javascript, SQL, Ruby, Ocaml, and MiniLang.
           </ListParagraph>
         </ListContainer>
       </ListItem>
