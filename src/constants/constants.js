@@ -8,6 +8,34 @@ export const typewriter_list = [
 
 export const projects = [
   {
+    title: "Tiktok Watermark Remover",
+    description: "This is a machine learning project that removes the Tiktok watermark from videos. It uses a convolutional neural network to detect where the watermark is on an image then removes it using computer vision inpainting.",
+    image: '/images/watermark-detect.jpg',
+    tags: ["ML", "Pytorch", "CNN", "Computer Vision"],
+    source: 'https://github.com/connorholm/tiktok-watermark-yolov7',
+    visit: '',
+    id: 12,
+
+  },
+  {
+    title: "Little Free Library Android App",
+    description: "Helped build the Android app. Built out mapping features (Google Maps API), authentication, and the UI screens. Worked with configuring profile picutres and user information.",
+    image: '/images/little-free-library.jpeg',
+    tags: ["Android", "Kotlin", "Google Maps Library", "APIs"],
+    source: '',
+    visit: 'https://littlefreelibrary.org/app/',
+    id: 11,
+  },
+  {
+    title: "Flappy Bird Genetic Algorithm",
+    description: "Modified the Flappy Bird game to use a genetic algorithm to train the bird to play the game. The bird starts off with random weights and then the algorithm trains the bird to play the game.",
+    image: '/images/flappybird.png',
+    tags: ["Genetic Algorithms", "AI", "Python"],
+    source: 'https://github.com/connorholm/flappybird-genetic-algorithm',
+    visit: "/flappybird-genetic-algorithm.pdf",
+    id: 10,
+  },
+  {
     title: "Daily Dose of Laughter",
     description: "This website displays jokes to users! An authenticated user is able to publish jokes and interact with other people's posts. The frontend was build with React and the backend is a fully functionally Express API with a MongoDB database.",
     image: '/images/joke.png',
