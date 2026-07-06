@@ -1,20 +1,102 @@
 export const typewriter_list = [
   "AI/ML",
-  "Mobile Dev",
+  "AI Agents",
+  "Data Engineering",
   "Web Dev",
-  "APIs",
-  "Cloud Services"
+  "Cloud Services",
+  "Mobile Dev"
 ];
 
 
 export const accomplishments = [
-  { number: "5+", text: 'Years of Programming Experience'},
-  { number: 10, text: "Programming Languages" },
+  { number: "8+", text: 'Years of Programming Experience'},
+  { number: 12, text: "Programming Languages" },
   { number: 4, text: 'Mobile Applications'},
-  { number: 3, text: "Machine Learning Projects"},
+  { number: "6+", text: "AI / ML Projects"},
+];
+
+// Professional experience. Roles have no logos, so each renders with an icon
+// (resolved in the Experience component) per the "icon fallback" approach.
+export const experience = [
+  {
+    company: "Vantix Strategies",
+    role: "Founder & Principal Consultant",
+    date: "2025 — Present",
+    location: "Remote",
+    icon: "rocket",
+    description:
+      "Founded a boutique firm of Forward Deployed Engineers who embed inside client teams and ship production AI systems — not strategy decks — in under six weeks, with full IP owned by the client. Deliver across AI orchestration (RAG, agents, LLM ops), embedded data engineering, and post-acquisition tech-stack consolidation.",
+    tags: ["Python", "LangChain", "Snowflake", "dbt", "RAG", "Agents"],
+    visit: "https://www.vantixstrategies.com/",
+  },
+  {
+    company: "UnitedHealthcare",
+    role: "AI Engineer",
+    date: "2025 — Present",
+    location: "Minnetonka, MN",
+    icon: "robot",
+    description:
+      "Built an AI observability platform for legacy and cloud-native systems, and a seamless benefits API that lets internal agents retrieve member data through natural language, powered by MCP servers for agentic capabilities. Sharply reduced Mean Time to Recovery on systems where downtime is valued at $600K/minute.",
+    tags: ["Python", "MCP", "LangChain", "FastAPI", "Observability"],
+    visit: "",
+  },
+  {
+    company: "UnitedHealth Group",
+    role: "Software Engineer Intern — Cloud Migration",
+    date: "2024 — 2025",
+    location: "Minneapolis, MN",
+    icon: "cloud",
+    description:
+      "Containerized 52 .NET APIs and 10 Angular apps with Docker, Kubernetes, and Helm, and built CI/CD pipelines with GitHub Actions and Octopus Deploy — saving $100K+ in operating costs through horizontal pod autoscaling.",
+    tags: ["Docker", "Kubernetes", "Helm", "GitHub Actions", ".NET"],
+    visit: "",
+  },
+  {
+    company: "UnitedHealth Group",
+    role: "Software Engineer Intern — Machine Learning",
+    date: "2023 — 2024",
+    location: "Minneapolis, MN",
+    icon: "eye",
+    description:
+      "Designed CNN architectures for section-header detection (90% accuracy) using image processing, transfer learning, and OCR. The model powers a platform processing 2M+ medical documents and generating $27M in annual revenue.",
+    tags: ["PyTorch", "OpenCV", "Computer Vision", "CNNs"],
+    visit: "",
+  },
+  {
+    company: "Jed Mahonis Group",
+    role: "Android Software Engineer",
+    date: "2021 — 2022",
+    location: "St. Louis Park, MN",
+    icon: "android",
+    description:
+      "Built native Android applications in Kotlin and Java — implementing authentication, REST API integration, and Google Maps features — while collaborating with QA under Agile and Git workflows.",
+    tags: ["Kotlin", "Java", "Android", "Google Maps"],
+    visit: "",
+  },
 ];
 
 export const projects = [
+  {
+    title: "Luup",
+    description:
+      "A SaaS platform for smarter professional networking, surfacing connections by shared criteria such as alumni, past employers, and location. Built a dashboard for matches, companies, roles, and AI-generated outreach emails, plus a discovery feed that continuously suggests new connections.",
+    image: '',
+    icon: 'users',
+    tags: ["TypeScript", "Node.js", "Postgres", "Google Gemini"],
+    source: '',
+    visit: '',
+    id: 14,
+  },
+  {
+    title: "Py-Doc",
+    description:
+      "An open-source Python library that makes document-layout computer vision and OCR accessible. Trained an object-detection CNN on the IBM PubLayNet dataset to parse document structure, then extracts text region-by-region with Tesseract.",
+    image: '/images/py-doc.jpg',
+    tags: ["Python", "Computer Vision", "OCR", "Open Source"],
+    source: 'https://github.com/connorholm/py-doc',
+    visit: 'https://pypi.org/project/py-doc/',
+    id: 13,
+  },
   {
     title: "Tiktok Watermark Remover",
     description: "This is a machine learning project that removes the Tiktok watermark from videos. It uses a convolutional neural network to detect where the watermark is on an image then removes it using computer vision inpainting.",
@@ -98,33 +180,33 @@ export const TimeLineData = [
   { year: 2021, text: 'Helped Build Out Little Free Library Android App', },
   { year: 2022, text: 'Used Ruby on Rails to build out an appointment app\'s API', },
   { year: 2023, text: 'Took interest in AI, built a Flappy Bird agent using a genetic algorithm', },
-  { year: 2023, text: 'Used CNN\'s to build use machine learning applications for removing watermarks', },
-  { year: 2023, text: 'Always Learning More!', },
+  { year: 2023, text: 'Interned at UnitedHealth Group building computer-vision models for medical documents', },
+  { year: 2024, text: 'Earned a BS in Computer Science from the University of Minnesota and began a Master\'s in CS', },
+  { year: 2024, text: 'Joined UnitedHealth Group as a Cloud Migration engineer, containerizing services with Docker & Kubernetes', },
+  { year: 2025, text: 'Founded Vantix Strategies, an AI consulting firm of Forward Deployed Engineers shipping production AI systems', },
+  { year: 2025, text: 'Completed my Master\'s in Computer Science and became an AI Engineer at UnitedHealthcare', },
+  { year: 2026, text: 'Building AI observability platforms and agentic systems (MCP, LLM agents) in production', },
+  { year: 2026, text: 'Always Learning More!', },
 ];
 
 export const education = [
-  { school: 'Eden Prairie High School', 
-    degree: 'High School Diploma', 
-    graducation: '2021', 
-    image: '/images/high-school.jpg',
+  { school: 'University of Minnesota',
+    degree: 'MS in Computer Science',
+    graducation: 'Spring 2025',
+    image: '/images/university.jpg',
     classes: [
-      "AP Computer Science Principles",
-      "AP Java",
-      "AP Calculus AB",
-      "AP Calculus BC",
-      "Multivariable Calculus",
-      "AP Statistics",
-      "AP Physics C",
-      "AP Chemistry",
-      "AP Macro Economics",
-      "iOS App Development",
-      "Advanced iOS App Development",
-      "Cyber Security",
+      'Advanced Machine Learning',
+      'Computer Vision',
+      'Natural Language Processing',
+      'Data Visualization',
+      'Web Development',
+      'Computational Genomics',
+      'Mathematics of Financial Derivatives',
     ]
   },
   { school: 'University of Minnesota',
     degree: 'BS in Computer Science',
-    graducation: 'Fall 2023',
+    graducation: 'Spring 2024',
     image: '/images/university.jpg',
     classes: [
       'CSCI 1133 - Intro to Computing and Programming Concepts',
@@ -141,5 +223,24 @@ export const education = [
       'CSCI 5521 - Introduction to Machine Learning',
       'STAT 3021 - Introduction to Probability and Statistics'
     ]
-  }
+  },
+  { school: 'Eden Prairie High School',
+    degree: 'High School Diploma',
+    graducation: '2021',
+    image: '/images/high-school.jpg',
+    classes: [
+      "AP Computer Science Principles",
+      "AP Java",
+      "AP Calculus AB",
+      "AP Calculus BC",
+      "Multivariable Calculus",
+      "AP Statistics",
+      "AP Physics C",
+      "AP Chemistry",
+      "AP Macro Economics",
+      "iOS App Development",
+      "Advanced iOS App Development",
+      "Cyber Security",
+    ]
+  },
 ]

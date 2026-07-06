@@ -11,7 +11,7 @@ const Header = () =>  {
 return (
   <Container>
     <Div1>
-      <Link href="/" >
+      <Link href="/" legacyBehavior passHref>
         <a style={{ display: "flex", alignItems: "center", color: 'white', marginBottom: '20px' }}>
           {/* <Avatar src="/images/square_pfp.jpg" alt='profile pic' sx={{ width:75, height:75 }} /> */}
           <BiCodeCurly size="3rem" />
@@ -21,32 +21,37 @@ return (
     </Div1>
     <Div2>
       <li>
-        <Link href="#projects">
+        <Link href="#experience" legacyBehavior passHref>
+          <NavLink>Experience</NavLink>
+        </Link>
+      </li>
+      <li>
+        <Link href="#projects" legacyBehavior passHref>
           <NavLink>Projects</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#tech">
+        <Link href="#tech" legacyBehavior passHref>
           <NavLink>Technologies</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#about">
+        <Link href="#about" legacyBehavior passHref>
           <NavLink>About</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#education">
+        <Link href="#education" legacyBehavior passHref>
           <NavLink>Education</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#current">
+        <Link href="#current" legacyBehavior passHref>
           <NavLink>Current</NavLink>
         </Link>
       </li>
       {/* <li>
-        <Link href="/Resume-ConnorHolm.pdf">
+        <Link href="/Resume-ConnorHolm.pdf" legacyBehavior passHref>
           <NavLink>Resumé</NavLink>
         </Link>
       </li> */}

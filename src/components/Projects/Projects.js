@@ -1,8 +1,19 @@
 import React from 'react';
+import { FaUsers, FaCode } from 'react-icons/fa';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, IconWrap } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+
+// Icon fallback for projects that don't have a good picture.
+const iconFor = (key) => {
+  switch (key) {
+    case 'users':
+      return <FaUsers size="5rem" />;
+    default:
+      return <FaCode size="5rem" />;
+  }
+};
 
 const Projects = () => (
   <Section nopadding id="projects">
@@ -10,9 +21,9 @@ const Projects = () => (
     <br />
     <SectionTitle >Projects</SectionTitle>
     <GridContainer>
-      {projects.map(({ id, image, title, description, tags, source, visit }) => (
+      {projects.map(({ id, image, icon, title, description, tags, source, visit }) => (
         <BlogCard key={id}>
-          <Img src={image} />
+          {image ? <Img src={image} /> : <IconWrap>{iconFor(icon)}</IconWrap>}
           <TitleContent>
             <HeaderThree title>{title}</HeaderThree>
             <Hr />
@@ -27,17 +38,12 @@ const Projects = () => (
               ))}
             </TagList>
           </div>
-          <UtilityList>
-            {visit == "" ? (
-              <ExternalLinks href={source}>Source</ExternalLinks>
-            ) : (
-              <>
-                <ExternalLinks href={visit}>Visit</ExternalLinks>
-                <ExternalLinks href={source}>Source</ExternalLinks>
-              </>
-            )}
-          
-          </UtilityList>
+          {(source || visit) && (
+            <UtilityList>
+              {visit && <ExternalLinks href={visit}>Visit</ExternalLinks>}
+              {source && <ExternalLinks href={source}>Source</ExternalLinks>}
+            </UtilityList>
+          )}
         </BlogCard>
       ))}
     </GridContainer>

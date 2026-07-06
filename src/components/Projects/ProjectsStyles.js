@@ -8,6 +8,20 @@ export const Img = styled.img`
   overflow: hidden;
 `
 
+// Fallback shown when a project has no good picture: a large icon on a
+// gradient panel that fills the same space as the image would.
+export const IconWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: linear-gradient(135deg, #13adc7 0%, #945dd6 100%);
+`
+
 export const GridContainer = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

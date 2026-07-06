@@ -9,6 +9,7 @@ import Current from '../components/Current/Current'
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 import Education from "../components/Education/Education";
+import Experience from "../components/Experience/Experience";
 
 const Home = () => {
   useEffect(() => {
@@ -20,6 +21,7 @@ const Home = () => {
         <Hero />
         <BgAnimation />
       </Section>
+      <Experience />
       <Projects />
       <Technologies />
       <Timeline />
