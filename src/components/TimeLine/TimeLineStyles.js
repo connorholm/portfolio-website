@@ -4,35 +4,44 @@ import styled from 'styled-components'
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
   background: #0F1624;
-  padding: 0rem;
-  list-style:none;
+  padding: 0 0 12px;
+  list-style: none;
   display: flex;
-  justify-content: space-between; 
-  /* overflow-x: hidden; */
+  gap: 24px;
+  position: relative;
 
-  margin-left: 32px;
-  &:first-of-type{
-    margin-left: 0px;
+  /* scroll on every screen size (was desktop-cramped before) */
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+
+  margin-left: 0;
+  margin-bottom: 24px;
+
+  /* subtle, discoverable scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
 
-  margin-bottom: 80px;
-
-  //remove scrollbar
-  scrollbar-width: none;  
-   &::-webkit-scrollbar {
-     display: none;
-   }
-
   @media ${props => props.theme.breakpoints.sm} {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
-    justify-content: initial;
+    gap: 0;
     margin-bottom: 8px;
   }
 `
 export const CarouselMobileScrollNode = styled.div`
+  flex: 0 0 auto;
+
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
     min-width: ${({ final }) => final ? `120%;` : `min-content`}
@@ -42,15 +51,20 @@ export const CarouselMobileScrollNode = styled.div`
 export const CarouselItem = styled.div`
   background: #0F1624;
   border-radius: 3px;
-  max-width: 196px;
+  width: 196px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: opacity 0.35s ease;
+  opacity: ${(props) => props.active === props.index ? 1 : 0.5};
 
   @media ${props => props.theme.breakpoints.md} {
-    max-width: 124px;
+    width: 150px;
   }
-  
+
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
     min-width: 120px;
+    width: auto;
     background: #0E131F;
     padding: 4px;
     align-content: start;
@@ -59,8 +73,8 @@ export const CarouselItem = styled.div`
     overflow: visible;
     position: relative;
     height: fit-content;
-    
-    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
+
+    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`};
   }
 `
 
@@ -81,7 +95,7 @@ export const CarouselItemTitle = styled.h4`
     line-height: 28px;
     margin-bottom: 4px;
   }
-  
+
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 24px;
@@ -109,7 +123,7 @@ export const CarouselItemText = styled.p`
   @media ${props => props.theme.breakpoints.md} {
     font-size: 12px;
     line-height: 18px;
-    padding-right: 32px;
+    padding-right: 16px;
   }
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 10px;
@@ -118,27 +132,24 @@ export const CarouselItemText = styled.p`
   }
 `
 export const CarouselButtons = styled.div`
-  width: 288px;
-
-  display: none;
-  visibility: hidden;
-
-  @media ${props => props.theme.breakpoints.sm} {
-    display: flex;
-    visibility: visible;
-    margin-bottom: 48px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 48px;
 `
 
 export const CarouselButton = styled.button`
   box-sizing: border-box;
   background: none;
-  padding: 4px;
+  padding: 6px;
   border: none;
   cursor: pointer;
-  margin-right: 4px;
   opacity: ${(props) => props.active === props.index ? `1` : `.33`};
   transform: ${(props) => props.active === props.index ? `scale(1.6)` : `scale(1)`};
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
   &:focus {
     outline: none;
@@ -149,6 +160,6 @@ export const CarouselButtonDot = styled.div`
   background-color: white;
   border-radius: 10px;
   margin: auto;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
 `

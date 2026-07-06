@@ -11,12 +11,13 @@ function Current() {
     <Section id="current">
       <SectionDivider />
       <br />
-      <SectionTitle>Current Projects</SectionTitle>
+      <SectionTitle>What I'm Working On</SectionTitle>
       <SectionText>
-         • Working in the medical space to better navigate documents using various forms of machine learning 
-         (optical character recognition, object detection models, NLP, etc).
+         • Running Vantix Strategies, a team of Forward Deployed Engineers who embed with clients and ship
+         production AI systems — RAG pipelines, agents, and data platforms — in under six weeks.
          <br />
-         • Deploying and launching a web application of the machine learning model that can remove watermarks from videos. 
+         • Building an AI observability platform and a natural-language benefits API at UnitedHealthcare,
+         powered by MCP servers for agentic capabilities.
       </SectionText>
     </Section>
   );
