@@ -1,3 +1,5 @@
+import type { Photo } from "@/lib/photos";
+
 /**
  * Where Connor has been.
  *
@@ -21,7 +23,7 @@ export const VISITED_COUNTRY_IDS: readonly string[] = [
 export const TRAVEL_TOTALS = [
   { label: "Countries", value: "6" },
   { label: "Continents", value: "3" },
-  { label: "Trips logged", value: "4" },
+  { label: "Trips logged", value: "5" },
 ] as const;
 
 export type Trip = {
@@ -37,6 +39,8 @@ export type Trip = {
   summary: string;
   /** Did you run there? With the streak running, mostly yes. */
   ranThere?: boolean;
+  /** Rendered only where the file exists — see src/lib/photos.ts. */
+  photos?: readonly Photo[];
 };
 
 export const TRIPS: readonly Trip[] = [
@@ -49,6 +53,13 @@ export const TRIPS: readonly Trip[] = [
     sort: "2026-08",
     summary: "Just back from this one.",
     ranThere: true,
+    photos: [
+      {
+        src: "/images/iceland-skogafoss.jpg",
+        alt: "Standing with arms outstretched in front of Skógafoss, a rainbow arcing across the spray",
+        caption: "Skógafoss",
+      },
+    ],
   },
   {
     slug: "japan",
@@ -59,6 +70,35 @@ export const TRIPS: readonly Trip[] = [
     sort: "2026-05",
     summary: "Three cities, moving south and west: Tokyo, then Kyoto, then Osaka.",
     ranThere: true,
+    photos: [
+      {
+        src: "/images/japan-meiji-shrine.jpg",
+        alt: "Standing on the approach to the Meiji Shrine in Tokyo, crowds moving past the gate behind",
+        caption: "Meiji Shrine, Tokyo",
+      },
+      {
+        src: "/images/japan-neon-tunnel.jpg",
+        alt: "Riding an escalator through a tunnel lit in purple and yellow neon",
+        caption: "Somewhere underground",
+      },
+    ],
+  },
+  {
+    slug: "bozeman",
+    title: "Bozeman, Montana",
+    country: "United States",
+    coords: [-111.04, 45.68],
+    when: "Summer",
+    sort: "2025-07",
+    summary: "Alpine lakes and a lot of vertical, in the mountains south of town.",
+    ranThere: true,
+    photos: [
+      {
+        src: "/images/bozeman-alpine-lake.jpg",
+        alt: "Standing in front of an alpine lake below a steep rocky ridge in the mountains near Bozeman",
+        caption: "Above Bozeman",
+      },
+    ],
   },
   {
     slug: "whistler",

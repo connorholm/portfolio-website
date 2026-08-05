@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WorldMap } from "@/components/charts/WorldMap";
+import { PhotoGrid } from "@/components/ui/PhotoGrid";
 import { PageHeader, Section } from "@/components/ui/Section";
 import { Stats } from "@/components/ui/Stats";
 import { RECENT_TRIPS, TRAVEL_TOTALS, VISITED_COUNTRY_IDS } from "@/data/travel";
@@ -40,7 +41,7 @@ export default function TravelPage() {
       <Section rail="Trips" note={`${RECENT_TRIPS.length} logged`}>
         <h2 className="text-h2">Trip logs</h2>
         <ol className="border-rule mt-8 border-t">
-          {RECENT_TRIPS.map((trip) => (
+          {RECENT_TRIPS.map((trip, i) => (
             <li key={trip.slug} id={trip.slug} className="border-rule scroll-mt-24 border-b py-7">
               <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
                 <h3 className="text-h3">{trip.title}</h3>
@@ -54,6 +55,7 @@ export default function TravelPage() {
                   Ran there
                 </p>
               )}
+              <PhotoGrid photos={trip.photos} className="mt-5" priority={i === 0} />
             </li>
           ))}
         </ol>

@@ -21,12 +21,14 @@ export const SITE = {
 } as const;
 
 /**
- * Hero portrait. Deliberately null: the only photo in the repo is a 2020
- * senior portrait, and shipping it would undercut the point of the rebuild.
- * Drop a current image in /public/images and point this at it — ideally
- * mid-race or on a trail rather than a headshot.
+ * Hero portrait. Rendered only once the file is actually present in /public —
+ * see hasPhoto() in src/lib/photos.ts — so the hero collapses to a clean
+ * single column until then rather than shipping a broken image.
  */
-export const HERO_IMAGE: { src: string; alt: string } | null = null;
+export const HERO_IMAGE: { src: string; alt: string } | null = {
+  src: "/images/iceland-skogafoss.jpg",
+  alt: "Connor standing with arms outstretched in front of Skógafoss in Iceland, a rainbow arcing across the spray",
+};
 
 export type NavItem = {
   /** Typed against the app's real routes — a broken nav link fails the build. */

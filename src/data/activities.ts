@@ -1,3 +1,5 @@
+import type { Photo } from "@/lib/photos";
+
 /**
  * What Connor does outside work.
  *
@@ -50,6 +52,8 @@ export type Activity = {
   gear?: readonly GearItem[];
   /** An outbound reference, where one exists. */
   link?: { href: string; label: string };
+  /** Rendered only where the file exists — see src/lib/photos.ts. */
+  photos?: readonly Photo[];
 };
 
 const ALL_YEAR = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -70,6 +74,13 @@ export const ACTIVITIES: readonly Activity[] = [
       { label: "Grandma's Marathon", value: "Every year", note: "including one double" },
     ],
     link: { href: "https://runeveryday.com/index.html", label: "Streak registry" },
+    photos: [
+      {
+        src: "/images/mmt-100-finish.jpg",
+        alt: "Two runners under the Massanutten Mountain Trails 100 Mile Run finish arch, holding belt buckles and trekking poles",
+        caption: "Massanutten, 2025 — buckle in hand",
+      },
+    ],
     highlights: [
       {
         date: "2025-05-17",

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { RaceTable } from "@/components/activities/RaceTable";
 import { ElevationProfile } from "@/components/charts/ElevationProfile";
 import { Measure, PageHeader, Section } from "@/components/ui/Section";
+import { PhotoGrid } from "@/components/ui/PhotoGrid";
 import { Stats } from "@/components/ui/Stats";
 import {
   ACTIVITIES,
@@ -159,6 +160,8 @@ export default async function ActivityPage({ params }: { params: Promise<Params>
             {activity.link.label} →
           </a>
         )}
+
+        <PhotoGrid photos={activity.photos} className="mt-7" priority />
 
         {activity.slug === "ultrarunning" && NEXT_RACE && (
           <p className="text-ink-2 mt-5 font-mono text-sm">
