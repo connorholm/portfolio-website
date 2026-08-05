@@ -20,16 +20,16 @@ export default function ActivitiesPage() {
       <PageHeader
         eyebrow="Activities"
         title="What I do when I'm not at a desk"
-        lede="Four of them, running the deepest. Some are seasonal and some are year-round, which is most of the reason there are four."
+        lede="Five of them. Running and lifting go all year; the rest take the months that suit them, which is most of the reason there are five."
       />
 
       <Section rail="The year" note="What's in season">
         <h2 className="text-h2">A year, roughly</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Minnesota does most of the scheduling. Skiing takes the months running cannot use,
-            hiking fills the long summer days, and pickleball is the one that does not care what
-            month it is.
+            Running is the constant — a mile a day minimum, whatever the weather is doing. Around
+            it, Minnesota does the scheduling: skis from December, trails and a tent from spring
+            through fall, pickleball once it is properly warm, and lifting underneath all of it.
           </p>
         </Measure>
         <div className="mt-7">
@@ -52,7 +52,7 @@ export default function ActivitiesPage() {
         <Section
           key={activity.slug}
           rail={activity.name}
-          note={`Since ${activity.since}`}
+          note={activity.months.length === 12 ? "All year" : "Seasonal"}
           id={activity.slug}
         >
           <div className="flex flex-wrap items-baseline justify-between gap-4">
@@ -67,10 +67,12 @@ export default function ActivitiesPage() {
 
           <Measure className="mt-3">
             <p className="text-ink font-display text-h3">{activity.tagline}</p>
-            <p className="text-ink-2 mt-3">{activity.summary}</p>
+            {activity.summary && <p className="text-ink-2 mt-3">{activity.summary}</p>}
           </Measure>
 
-          {activity.stats.length > 0 && <Stats stats={activity.stats} className="mt-7" />}
+          {activity.stats && activity.stats.length > 0 && (
+            <Stats stats={activity.stats} className="mt-7" />
+          )}
         </Section>
       ))}
     </>

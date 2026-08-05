@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RaceTable } from "@/components/activities/RaceTable";
 import { ElevationProfile } from "@/components/charts/ElevationProfile";
-import { MileageChart } from "@/components/charts/MileageChart";
 import { Measure, PageHeader, Section } from "@/components/ui/Section";
 import { Stats } from "@/components/ui/Stats";
 import {
@@ -12,10 +11,10 @@ import {
   COMPLETED_RACES,
   CURRENT_BLOCK,
   FEATURED_PROFILE,
+  FEATURED_PROFILE_GAIN,
   NEXT_RACE,
   PERSONAL_BESTS,
   UPCOMING_RACES,
-  WEEKLY_MILEAGE,
   type Activity,
 } from "@/data/activities";
 import { formatDate } from "@/lib/format";
@@ -38,9 +37,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 /**
- * Ultrarunning carries modules nothing else needs — a race log, a PR board, a
- * training chart, a course profile. Rather than forcing every activity into a
- * race-shaped schema, those render only here.
+ * Running carries modules nothing else needs — the goal course profile, a race
+ * log, and a PR board. Rather than forcing every activity into a race-shaped
+ * schema, those render only here.
  */
 function RunningModules() {
   const dnfCount = COMPLETED_RACES.filter((r) => r.status === "dnf").length;
@@ -55,9 +54,12 @@ function RunningModules() {
           </p>
         </Measure>
         <div className="mt-7">
-          <MileageChart
-            weeks={WEEKLY_MILEAGE}
-            caption="Weekly mileage — replace with a Strava fetch once the site is on a Node host"
+          <ElevationProfile
+            points={FEATURED_PROFILE}
+            gain={FEATURED_PROFILE_GAIN}
+            caption="Superior 100 — measured from the course GPX"
+            startLabel="Gooseberry Falls"
+            endLabel="Lutsen · mile 102.9"
           />
         </div>
       </Section>
@@ -115,24 +117,6 @@ function RunningModules() {
           </table>
         </div>
       </Section>
-
-      <Section rail="Course" note="A profile">
-        <h2 className="text-h2">A course worth showing</h2>
-        <Measure className="mt-4">
-          <p className="text-ink-2">
-            Every race report opens with its own profile drawn the same way, so the shape of a
-            course is comparable across the whole site.
-          </p>
-        </Measure>
-        <div className="mt-7">
-          <ElevationProfile
-            points={FEATURED_PROFILE}
-            caption="Course profile"
-            startLabel="Mile 0"
-            endLabel="Mile 50"
-          />
-        </div>
-      </Section>
     </>
   );
 }
@@ -155,12 +139,26 @@ export default async function ActivityPage({ params }: { params: Promise<Params>
         </div>
       </PageHeader>
 
-      <Section rail="Overview" note={`Since ${activity.since}`}>
+      <Section rail="Overview" note={activity.months.length === 12 ? "All year" : "Seasonal"}>
         <h2 className="sr-only">Overview</h2>
-        <Measure>
-          <p className="text-ink-2">{activity.summary}</p>
-        </Measure>
-        {activity.stats.length > 0 && <Stats stats={activity.stats} className="mt-7" />}
+        {activity.summary && (
+          <Measure>
+            <p className="text-ink-2">{activity.summary}</p>
+          </Measure>
+        )}
+        {activity.stats && activity.stats.length > 0 && (
+          <Stats stats={activity.stats} className={activity.summary ? "mt-7" : ""} />
+        )}
+        {activity.link && (
+          <a
+            href={activity.link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-ink mt-5 inline-block font-mono text-[0.68rem] tracking-[0.12em] uppercase hover:underline"
+          >
+            {activity.link.label} →
+          </a>
+        )}
 
         {activity.slug === "ultrarunning" && NEXT_RACE && (
           <p className="text-ink-2 mt-5 font-mono text-sm">

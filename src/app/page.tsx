@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { WorldMap } from "@/components/charts/WorldMap";
-import { Portrait } from "@/components/site/Portrait";
+import { HAS_PORTRAIT, Portrait } from "@/components/site/Portrait";
 import { StatusStrip } from "@/components/site/StatusStrip";
 import { Measure, Section, Shell } from "@/components/ui/Section";
 import { Stats } from "@/components/ui/Stats";
@@ -11,7 +11,7 @@ import { ACTIVITIES, NEXT_RACE } from "@/data/activities";
 import { SITE } from "@/data/site";
 import { RECENT_TRIPS, TRAVEL_TOTALS, VISITED_COUNTRY_IDS } from "@/data/travel";
 import { getPosts, TAG_LABEL } from "@/lib/content";
-import { daysUntil, formatDate, formatDateRange } from "@/lib/format";
+import { daysUntil, formatDate } from "@/lib/format";
 
 export default async function HomePage() {
   const posts = (await getPosts()).slice(0, 3);
@@ -21,7 +21,9 @@ export default async function HomePage() {
     <>
       {/* ---------- Hero ---------- */}
       <Shell className="pt-14 pb-16 md:pt-24">
-        <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div
+          className={`grid items-end gap-10 ${HAS_PORTRAIT ? "lg:grid-cols-[minmax(0,1fr)_22rem]" : ""}`}
+        >
           <div>
             <p className="label mb-5">{SITE.location}</p>
             <h1 className="text-display max-w-[14ch]">{SITE.tagline}</h1>
@@ -95,8 +97,8 @@ export default async function HomePage() {
         </div>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Ultras take the most planning and give back the most; the others fill in around them.
-            Minnesota does most of the scheduling.
+            Running is the constant — at least a mile every day for the last four years. Everything
+            else takes the months that suit it, and Minnesota does most of that scheduling.
           </p>
         </Measure>
 
@@ -149,7 +151,7 @@ export default async function HomePage() {
             <li key={t.slug} className="border-rule border-t pt-3">
               <p className="font-display text-lg">{t.title}</p>
               <p className="text-ink-3 font-mono text-[0.66rem] tracking-[0.1em] uppercase">
-                {t.country} · {formatDateRange(t.start, t.end)}
+                {t.country} · {t.when}
                 {t.ranThere && " · ran there"}
               </p>
             </li>

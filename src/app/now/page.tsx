@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Measure, PageHeader, Section } from "@/components/ui/Section";
 import { ACTIVITIES, CURRENT_BLOCK, NEXT_RACE } from "@/data/activities";
-import { NEXT_TRIP } from "@/data/travel";
 import { formatDate, formatMonth } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -70,25 +69,6 @@ export default function NowPage() {
               Next start line: {NEXT_RACE.name} — {formatDate(NEXT_RACE.date)}
             </p>
           )}
-        </Measure>
-      </Section>
-
-      <Section rail="Travel" note="Next">
-        <h2 className="text-h2">Going</h2>
-        <Measure className="mt-4">
-          <p className="text-ink-2">
-            <strong className="text-ink">{NEXT_TRIP.destination}</strong> — {NEXT_TRIP.when}.
-          </p>
-        </Measure>
-      </Section>
-
-      <Section rail="Reading" note="Optional">
-        <h2 className="text-h2">Reading</h2>
-        <Measure className="mt-4">
-          <p className="text-ink-2">
-            <strong className="text-ink">PLACEHOLDER</strong> — one or two books. Disproportionate
-            personality per byte, and the easiest line on the site to keep current.
-          </p>
         </Measure>
       </Section>
     </>

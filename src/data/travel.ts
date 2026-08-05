@@ -1,38 +1,27 @@
 /**
- * ⚠️  EVERY VALUE IN THIS FILE IS PLACEHOLDER DATA.
+ * Where Connor has been.
  *
- * Country codes are ISO 3166-1 numeric, which is what the world-atlas TopoJSON
- * keys on — the map fills a country by matching these ids. Replace the list
- * with the places you have actually been.
+ * Country ids are ISO 3166-1 numeric, which is what the world-atlas TopoJSON
+ * keys on — the map fills a country by matching these ids.
+ *
+ * Trips carry a `when` label rather than start/end dates, because for several
+ * of them only the month or the season is known. `sort` exists purely to order
+ * the list and is never displayed.
  */
 
-/** ISO 3166-1 numeric ids of visited countries. PLACEHOLDER. */
 export const VISITED_COUNTRY_IDS: readonly string[] = [
   "840", // United States
-  "124", // Canada
-  "484", // Mexico
-  "352", // Iceland
-  "372", // Ireland
-  "826", // United Kingdom
-  "250", // France
-  "380", // Italy
-  "724", // Spain
-  "756", // Switzerland
-  "276", // Germany
-  "578", // Norway
+  "124", // Canada — Whistler
+  "484", // Mexico — cruise
+  "340", // Honduras — cruise
   "392", // Japan
-  "554", // New Zealand
-  "152", // Chile
-  "032", // Argentina
-  "504", // Morocco
+  "352", // Iceland
 ];
 
-/** PLACEHOLDER — headline counters. */
 export const TRAVEL_TOTALS = [
-  { label: "Countries", value: "17" },
-  { label: "Continents", value: "5" },
-  { label: "US states", value: "34" },
-  { label: "Countries run in", value: "11" },
+  { label: "Countries", value: "6" },
+  { label: "Continents", value: "3" },
+  { label: "Trips logged", value: "4" },
 ] as const;
 
 export type Trip = {
@@ -41,62 +30,54 @@ export type Trip = {
   country: string;
   /** [longitude, latitude] — where the marker sits. */
   coords: readonly [number, number];
-  start: string; // ISO
-  end: string; // ISO
+  /** Human label: a month, a season, or whatever is actually known. */
+  when: string;
+  /** Sort key only, never rendered. Empty sorts last. */
+  sort: string;
   summary: string;
-  /** Set when there is a full write-up at /writing/<slug>. */
-  report?: string;
-  /** Did you run there? Ties the two threads together on the map. */
+  /** Did you run there? With the streak running, mostly yes. */
   ranThere?: boolean;
 };
 
 export const TRIPS: readonly Trip[] = [
   {
-    slug: "placeholder-alps",
-    title: "PLACEHOLDER — the Alps",
-    country: "Switzerland",
-    coords: [7.75, 46.02],
-    start: "2026-06-14",
-    end: "2026-06-28",
-    summary:
-      "PLACEHOLDER — two sentences on what this trip actually was. Where you stayed, what you did, the one thing you would tell someone about it.",
-    ranThere: true,
-  },
-  {
-    slug: "placeholder-japan",
-    title: "PLACEHOLDER — Japan",
-    country: "Japan",
-    coords: [138.25, 36.2],
-    start: "2025-11-02",
-    end: "2025-11-19",
-    summary: "PLACEHOLDER — two sentences.",
-    ranThere: true,
-  },
-  {
-    slug: "placeholder-patagonia",
-    title: "PLACEHOLDER — Patagonia",
-    country: "Chile",
-    coords: [-72.99, -50.94],
-    start: "2025-02-08",
-    end: "2025-02-22",
-    summary: "PLACEHOLDER — two sentences.",
-    ranThere: true,
-  },
-  {
-    slug: "placeholder-iceland",
-    title: "PLACEHOLDER — Iceland",
+    slug: "iceland",
+    title: "Iceland",
     country: "Iceland",
     coords: [-19.02, 64.96],
-    start: "2024-08-03",
-    end: "2024-08-13",
-    summary: "PLACEHOLDER — two sentences.",
+    when: "August 2026",
+    sort: "2026-08",
+    summary: "Just back from this one.",
+    ranThere: true,
+  },
+  {
+    slug: "japan",
+    title: "Japan — Tokyo, Kyoto, Osaka",
+    country: "Japan",
+    coords: [139.69, 35.69],
+    when: "May 2026",
+    sort: "2026-05",
+    summary: "Three cities, moving south and west: Tokyo, then Kyoto, then Osaka.",
+    ranThere: true,
+  },
+  {
+    slug: "whistler",
+    title: "Whistler",
+    country: "Canada",
+    coords: [-122.95, 50.12],
+    when: "Skiing",
+    sort: "",
+    summary: "Downhill rather than nordic, for once.",
+  },
+  {
+    slug: "caribbean-cruise",
+    title: "Mexico & Honduras",
+    country: "Cruise",
+    coords: [-86.53, 16.32],
+    when: "Cruise",
+    sort: "",
+    summary: "Two countries in one trip, most of it from the water.",
   },
 ];
 
-export const RECENT_TRIPS = [...TRIPS].sort((a, b) => b.start.localeCompare(a.start));
-
-/** PLACEHOLDER — where you are going next. Dated, like everything else. */
-export const NEXT_TRIP = {
-  destination: "PLACEHOLDER — next destination",
-  when: "PLACEHOLDER — month and year",
-} as const;
+export const RECENT_TRIPS = [...TRIPS].sort((a, b) => b.sort.localeCompare(a.sort));

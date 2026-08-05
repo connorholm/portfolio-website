@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Portrait } from "@/components/site/Portrait";
+import { HAS_PORTRAIT, Portrait } from "@/components/site/Portrait";
 import { Timeline, ThreadKey } from "@/components/about/Timeline";
 import { Measure, PageHeader, Section } from "@/components/ui/Section";
 import { SITE } from "@/data/site";
@@ -20,7 +20,7 @@ export default function AboutPage() {
       />
 
       <Section rail="Bio" note="Who I am">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div className={`grid gap-10 ${HAS_PORTRAIT ? "lg:grid-cols-[minmax(0,1fr)_18rem]" : ""}`}>
           <Measure>
             <h2 className="sr-only">Biography</h2>
             <div className="text-ink-2 space-y-4">

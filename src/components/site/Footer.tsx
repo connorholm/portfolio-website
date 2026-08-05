@@ -28,11 +28,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/uses" className="text-ink-2 hover:text-accent text-sm">
-                Uses
-              </Link>
-            </li>
           </ul>
         </nav>
 

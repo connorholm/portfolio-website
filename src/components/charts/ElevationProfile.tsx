@@ -65,6 +65,7 @@ export function ElevationProfile({
   yUnit = "ft",
   xUnit = "mi",
   caption,
+  gain,
   animate = true,
   showAxis = true,
 }: {
@@ -75,6 +76,11 @@ export function ElevationProfile({
   yUnit?: string;
   xUnit?: string;
   caption?: string;
+  /**
+   * Cumulative climb, when it was measured on the full-resolution track.
+   * Deriving it from downsampled points would understate it badly.
+   */
+  gain?: number;
   animate?: boolean;
   showAxis?: boolean;
 }) {
@@ -104,11 +110,12 @@ export function ElevationProfile({
   const areaD = `${d}L${sx(maxX).toFixed(1)},${baseline}L${sx(minX).toFixed(1)},${baseline}Z`;
 
   const gridValues = [lowY, (lowY + highY) / 2, highY];
-  const gain = points.reduce((total, p, i) => {
+  const derivedGain = points.reduce((total, p, i) => {
     if (i === 0) return 0;
     const prev = points[i - 1]!;
     return total + Math.max(0, p[1] - prev[1]);
   }, 0);
+  const shownGain = gain ?? derivedGain;
 
   return (
     <figure className="border-rule bg-panel border">
@@ -234,10 +241,10 @@ export function ElevationProfile({
       {caption && (
         <figcaption className="border-rule text-ink-3 border-t px-4 py-2.5 font-mono text-[0.64rem] tracking-[0.1em] uppercase">
           {caption}
-          {gain > 0 && (
+          {shownGain > 0 && (
             <span className="tabular">
               {" "}
-              · {formatNumber(Math.round(gain))} {yUnit} gain
+              · {formatNumber(Math.round(shownGain))} {yUnit} gain
             </span>
           )}
         </figcaption>

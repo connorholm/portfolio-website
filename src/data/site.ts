@@ -4,8 +4,7 @@ import type { Route } from "next";
  * Site-wide constants: identity, navigation, and the status strip.
  *
  * `contentStatus` gates the draft notice in the header. Flip it to "live"
- * once every PLACEHOLDER marked in src/data/* has been replaced with real
- * information — see running.ts and travel.ts especially.
+ * once the content is real. It drives the draft banner in the header.
  */
 
 export const SITE = {
@@ -17,7 +16,7 @@ export const SITE = {
   description:
     "Software engineer, ultrarunner, and traveller. Machine learning and mobile work, race reports, trip logs, and whatever I am currently thinking about.",
   email: "connorjholm@gmail.com",
-  contentStatus: "draft" as "draft" | "live",
+  contentStatus: "live" as "draft" | "live",
   location: "Eden Prairie, Minnesota",
 } as const;
 
@@ -93,8 +92,8 @@ export const STATUS: readonly StatusCell[] = [
   },
   {
     key: "Last trip",
-    value: "PLACEHOLDER — most recent trip",
-    detail: "Where you went and roughly when.",
+    value: "Iceland",
+    detail: "Back a few days ago. Japan — Tokyo, Kyoto, Osaka — was in May.",
     since: "2026-08-01",
   },
 ] as const;
