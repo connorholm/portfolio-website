@@ -1,4 +1,3 @@
-import type { Route } from "next";
 import type { Photo } from "@/lib/photos";
 
 /**
@@ -40,8 +39,13 @@ export type Trip = {
   summary: string;
   /** Rendered only where the file exists — see src/lib/photos.ts. */
   photos?: readonly Photo[];
-  /** A full write-up page for this trip, when one exists. */
-  detailHref?: Route;
+  /**
+   * A standalone artifact for this trip, when one exists — e.g. a static HTML
+   * page under /public. Deliberately a plain string, not a typed Next.js
+   * Route: it's not part of the app, so it opens in a new tab rather than
+   * being client-navigated to.
+   */
+  standaloneHref?: string;
 };
 
 export const TRIPS: readonly Trip[] = [
@@ -61,7 +65,7 @@ export const TRIPS: readonly Trip[] = [
         caption: "Skógafoss",
       },
     ],
-    detailHref: "/travel/iceland",
+    standaloneHref: "/iceland-scrapbook/index.html",
   },
   {
     slug: "japan",
