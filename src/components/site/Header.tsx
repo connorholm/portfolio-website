@@ -30,17 +30,8 @@ export function Header() {
   return (
     <header className="border-rule bg-ground/85 sticky top-0 z-40 border-b backdrop-blur-sm">
       <div className="mx-auto flex max-w-[76rem] items-center gap-4 px-5 py-3 sm:px-8">
-        <Link
-          href="/"
-          className="group font-display font-600 flex items-baseline gap-2 text-xl tracking-tight"
-        >
-          <span>{SITE.name}</span>
-          <span
-            aria-hidden="true"
-            className="text-ink-3 group-hover:text-accent xs:inline hidden font-mono text-[0.6rem] tracking-[0.16em] uppercase transition-colors"
-          >
-            {SITE.domain}
-          </span>
+        <Link href="/" className="font-display font-600 text-xl tracking-tight">
+          {SITE.name}
         </Link>
 
         <nav aria-label="Primary" className="ml-auto hidden lg:block">

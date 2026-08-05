@@ -4,8 +4,7 @@ import type { Route } from "next";
  * Site-wide constants: identity, navigation, and the status strip.
  *
  * `contentStatus` gates the draft notice in the header. Flip it to "live"
- * once every PLACEHOLDER marked in src/data/* has been replaced with real
- * information — see running.ts and travel.ts especially.
+ * once the content is real. It drives the draft banner in the header.
  */
 
 export const SITE = {
@@ -13,21 +12,23 @@ export const SITE = {
   domain: "connorholm.com",
   url: "https://www.connorholm.com",
   title: "Connor Holm",
-  tagline: "I build software and I go long.",
+  tagline: "Built to keep going.",
   description:
     "Software engineer, ultrarunner, and traveller. Machine learning and mobile work, race reports, trip logs, and whatever I am currently thinking about.",
   email: "connorjholm@gmail.com",
-  contentStatus: "draft" as "draft" | "live",
+  contentStatus: "live" as "draft" | "live",
   location: "Eden Prairie, Minnesota",
 } as const;
 
 /**
- * Hero portrait. Deliberately null: the only photo in the repo is a 2020
- * senior portrait, and shipping it would undercut the point of the rebuild.
- * Drop a current image in /public/images and point this at it — ideally
- * mid-race or on a trail rather than a headshot.
+ * Hero portrait. Rendered only once the file is actually present in /public —
+ * see hasPhoto() in src/lib/photos.ts — so the hero collapses to a clean
+ * single column until then rather than shipping a broken image.
  */
-export const HERO_IMAGE: { src: string; alt: string } | null = null;
+export const HERO_IMAGE: { src: string; alt: string } | null = {
+  src: "/images/iceland-skogafoss.jpg",
+  alt: "Connor standing with arms outstretched in front of Skógafoss in Iceland, a rainbow arcing across the spray",
+};
 
 export type NavItem = {
   /** Typed against the app's real routes — a broken nav link fails the build. */
@@ -80,21 +81,21 @@ export type StatusCell = {
 export const STATUS: readonly StatusCell[] = [
   {
     key: "Building",
-    value: "AI systems at Vantix Strategies & UnitedHealthcare",
+    value: "Vantix Strategies, and an AI Engineer at UnitedHealthcare",
     detail:
-      "Running a firm of forward deployed engineers, and building AI observability and agentic systems in production.",
+      "Growing an AI forward deployed engineering firm for businesses looking to optimize their processes, while working full-time as an AI Engineer at UnitedHealthcare.",
     since: "2026-08-01",
   },
   {
     key: "Training for",
-    value: "Superior Fall Trail Race — 100 Miler",
+    value: "Superior Fall Trail Race, 100 Miler",
     detail: "100 miles through the Sawtooth Mountains in Lutsen, MN, on 11 September 2026.",
     since: "2026-08-01",
   },
   {
     key: "Last trip",
-    value: "PLACEHOLDER — most recent trip",
-    detail: "Where you went and roughly when.",
+    value: "Iceland",
+    detail: "Back a few days ago. Japan (Tokyo, Kyoto, Osaka) was in May.",
     since: "2026-08-01",
   },
 ] as const;

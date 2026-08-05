@@ -22,7 +22,7 @@ npm run dev
 ## Stack
 
 Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 · MDX.
-No UI or charting libraries: the elevation profiles, mileage chart, world map, and
+No UI or charting libraries: the elevation profiles, season band, world map, and
 contour background are all hand-authored SVG or canvas.
 
 Deployed as a static export to GitHub Pages via `.github/workflows/nextjs.yml`.
@@ -38,7 +38,6 @@ Content is data, never components. Nothing below requires touching a `.tsx` file
 | Activities, seasons, races, PRs, gear    | `src/data/activities.ts`    |
 | Countries, trips, counters               | `src/data/travel.ts`        |
 | The merged work/activity/travel timeline | `src/data/timeline.ts`      |
-| Cross-cutting desk and outdoor kit       | `src/data/uses.ts`          |
 | Posts and race reports                   | `src/content/writing/*.mdx` |
 
 ### Adding an activity
@@ -48,10 +47,10 @@ band, a section on `/activities`, and its own page at `/activities/<slug>`
 automatically — no component changes. Set `months` to the months it is actually
 in season; that array drives the season band and the derived line on `/now`.
 
-Ultrarunning is the only activity with a race log, PR board, mileage chart, and
-course profile. Those modules key off `slug === "ultrarunning"` in
-`src/app/activities/[slug]/page.tsx` rather than being forced onto every sport.
-Per-activity gear lives on the activity; `/uses` covers only what spans all of them.
+Running is the only activity with a race log, PR board, and course profile.
+Those modules key off `slug === "ultrarunning"` in
+`src/app/activities/[slug]/page.tsx` rather than being forced onto every sport —
+an activity with just a tagline and a season renders perfectly well.
 
 ### Adding a post
 
@@ -69,18 +68,14 @@ draft: false # true keeps it out of the build entirely
 
 `src/content/writing/_template-race-report.mdx` is a marked-draft skeleton to copy.
 
-## Before going live
+## Content status
 
-The site currently renders a draft banner on every page. It is driven by
-`SITE.contentStatus` in `src/data/site.ts`. To clear it:
+`SITE.contentStatus` in `src/data/site.ts` is `"live"`. Set it back to `"draft"`
+to show a banner on every page while you are mid-edit.
 
-1. Replace every `PLACEHOLDER` in `src/data/` — `activities.ts` and `travel.ts`
-   are entirely placeholder. `work.ts` is real, sourced from LinkedIn and the
-   previous live site, but check the Vantix founding date: connorholm.com said
-   2025, LinkedIn says Jan 2026, and the file currently uses LinkedIn's.
-2. Add a current photo to `public/images/` and point `HERO_IMAGE` at it
-   (`src/data/site.ts`). The design leans on real imagery.
-3. Set `contentStatus` to `"live"`.
+Race data comes from UltraSignup; `vert` is deliberately `null` because that
+record does not report climb. The Superior 100 profile in
+`FEATURED_PROFILE` was sampled from the course GPX — 102.9 mi, ~18,400 ft.
 
 ## Design system
 

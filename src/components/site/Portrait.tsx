@@ -1,26 +1,20 @@
 import Image from "next/image";
 import { HERO_IMAGE } from "@/data/site";
+import { hasPhoto } from "@/lib/photos";
+
+/** True when a real hero photograph is present, so layouts can adapt. */
+export const HAS_PORTRAIT = hasPhoto(HERO_IMAGE?.src);
 
 /**
- * The hero image slot. When no current photograph is configured this renders
- * a labelled frame rather than falling back to an old one — a visible gap is
- * more useful than a stale portrait, and this design leans hard on real imagery.
+ * The hero image slot.
+ *
+ * Renders the photograph when the file exists, and nothing at all when it does
+ * not — the hero then collapses to a single column and reads as a deliberate
+ * typographic opening. What it never does is ship a broken image or fall back
+ * to an old photo.
  */
 export function Portrait({ className = "" }: { className?: string }) {
-  if (!HERO_IMAGE) {
-    return (
-      <div
-        className={`border-rule bg-panel flex aspect-[4/5] flex-col justify-end border border-dashed p-5 ${className}`}
-      >
-        <p className="label mb-1">Photograph</p>
-        <p className="text-ink-2 max-w-[30ch] text-sm">
-          A current photo of you goes here — on a trail, mid-race, or somewhere far from home. Set{" "}
-          <span className="text-survey font-mono text-xs">HERO_IMAGE</span> in{" "}
-          <span className="text-survey font-mono text-xs">src/data/site.ts</span>.
-        </p>
-      </div>
-    );
-  }
+  if (!HERO_IMAGE || !HAS_PORTRAIT) return null;
 
   return (
     <div

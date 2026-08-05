@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="font-display text-h3">{SITE.tagline}</p>
           <p className="text-ink-2 mt-2 max-w-[38ch] text-sm">
-            {SITE.name} — {SITE.location}. Best way to reach me is email.
+            {SITE.name}, {SITE.location}. Best way to reach me is email.
           </p>
           <a
             href={`mailto:${SITE.email}`}
@@ -28,11 +28,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/uses" className="text-ink-2 hover:text-accent text-sm">
-                Uses
-              </Link>
-            </li>
           </ul>
         </nav>
 

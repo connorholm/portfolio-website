@@ -11,8 +11,8 @@ export function DraftNotice() {
   return (
     <div className="border-accent bg-accent-wash border-b">
       <p className="text-accent-ink mx-auto max-w-[76rem] px-5 py-2 font-mono text-[0.64rem] leading-relaxed tracking-[0.1em] uppercase sm:px-8">
-        Draft — activity and travel content is placeholder data. Work and roles are real. Replace
-        the PLACEHOLDER entries in <span className="normal-case">src/data/</span>, then set
+        Draft: activity and travel content is placeholder data. Work and roles are real. Replace the
+        PLACEHOLDER entries in <span className="normal-case">src/data/</span>, then set
         contentStatus to &ldquo;live&rdquo;.
       </p>
     </div>
