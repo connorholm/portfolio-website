@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import type { Photo } from "@/lib/photos";
 
 /**
@@ -39,6 +40,8 @@ export type Trip = {
   summary: string;
   /** Rendered only where the file exists — see src/lib/photos.ts. */
   photos?: readonly Photo[];
+  /** A full write-up page for this trip, when one exists. */
+  detailHref?: Route;
 };
 
 export const TRIPS: readonly Trip[] = [
@@ -49,7 +52,8 @@ export const TRIPS: readonly Trip[] = [
     coords: [-19.02, 64.96],
     when: "August 2026",
     sort: "2026-08",
-    summary: "Just back from this one.",
+    summary:
+      "Just back from this one: nine days around the Ring Road, 41 stops from Keflavík to the last light in Reykjavík.",
     photos: [
       {
         src: "/images/iceland-skogafoss.jpg",
@@ -57,6 +61,7 @@ export const TRIPS: readonly Trip[] = [
         caption: "Skógafoss",
       },
     ],
+    detailHref: "/travel/iceland",
   },
   {
     slug: "japan",

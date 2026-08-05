@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { WorldMap } from "@/components/charts/WorldMap";
 import { PhotoGrid } from "@/components/ui/PhotoGrid";
 import { PageHeader, Section } from "@/components/ui/Section";
@@ -51,6 +52,14 @@ export default function TravelPage() {
               </div>
               <p className="text-ink-2 mt-3 max-w-[64ch]">{trip.summary}</p>
               <PhotoGrid photos={trip.photos} className="mt-5" priority={i === 0} />
+              {trip.detailHref && (
+                <Link
+                  href={trip.detailHref}
+                  className="text-accent-ink mt-5 inline-block font-mono text-[0.68rem] tracking-[0.13em] uppercase hover:underline"
+                >
+                  Open the interactive trip map →
+                </Link>
+              )}
             </li>
           ))}
         </ol>

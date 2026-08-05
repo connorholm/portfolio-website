@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       priority: 0.6,
     })),
+    { url: `${SITE.url}/travel/iceland`, lastModified: now, priority: 0.6 },
     ...posts.map((post) => ({
       url: `${SITE.url}/writing/${post.slug}`,
       lastModified: new Date(post.date),
