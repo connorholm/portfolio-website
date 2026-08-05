@@ -106,7 +106,9 @@ function RunningModules() {
                   <td className="font-display px-3 py-2.5 text-base">{pb.distance}</td>
                   <td className="tabular text-accent px-3 py-2.5 font-mono text-sm">{pb.time}</td>
                   <td className="text-ink-2 px-3 py-2.5 text-sm">{pb.race}</td>
-                  <td className="tabular text-ink-3 px-3 py-2.5 font-mono text-sm">{pb.year}</td>
+                  <td className="tabular text-ink-3 px-3 py-2.5 font-mono text-sm">
+                    {pb.year ?? "—"}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -183,7 +185,13 @@ export default async function ActivityPage({ params }: { params: Promise<Params>
                   key={h.date ?? `undated-${i}`}
                   className="border-rule grid gap-x-8 gap-y-1 border-b py-4 sm:grid-cols-[10rem_minmax(0,1fr)]"
                 >
-                  {h.date ? (
+                  {/* `when` wins when set: the date may be approximate and
+                      exists only to order the list correctly. */}
+                  {h.when ? (
+                    <span className="text-ink-3 pt-0.5 font-mono text-[0.7rem] tracking-[0.1em] uppercase">
+                      {h.when}
+                    </span>
+                  ) : h.date ? (
                     <time
                       dateTime={h.date}
                       className="tabular text-ink-3 pt-0.5 font-mono text-[0.7rem] tracking-[0.1em] uppercase"
@@ -192,7 +200,7 @@ export default async function ActivityPage({ params }: { params: Promise<Params>
                     </time>
                   ) : (
                     <span className="text-ink-3 pt-0.5 font-mono text-[0.7rem] tracking-[0.1em] uppercase">
-                      {h.when ?? "Undated"}
+                      Undated
                     </span>
                   )}
                   <p className="text-ink-2">{h.text}</p>

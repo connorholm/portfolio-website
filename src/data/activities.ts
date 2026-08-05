@@ -26,9 +26,13 @@ export type GearItem = {
 };
 
 export type Highlight = {
-  /** ISO date, or null when only the story is known and not the date. */
+  /** ISO date used for ordering, or null when only the story is known. */
   date: string | null;
-  /** Shown in place of a formatted date when `date` is null. */
+  /**
+   * Shown instead of the formatted date whenever it is set. Use it when the
+   * month or year is known but the exact day is not, so ordering can still be
+   * precise without the page claiming a day it cannot vouch for.
+   */
   when?: string;
   text: string;
 };
@@ -74,9 +78,9 @@ export const ACTIVITIES: readonly Activity[] = [
         text: "Covered 75.6 miles at Last Dot Standing, a last-person-standing format where you keep going until you cannot.",
       },
       {
-        date: null,
-        when: "PLACEHOLDER — year",
-        text: "Ran Grandma's Marathon as a double: the course from finish to start, then turned around and ran the actual race back. 52.4 miles, one of which had a bib on it.",
+        date: "2025-06-01",
+        when: "June 2025",
+        text: "Ran Grandma's Marathon as a double: the course from finish to start, then turned around and ran the actual race back. 52.4 miles, 26.2 of which had a bib on it.",
       },
       {
         date: null,
@@ -299,20 +303,22 @@ export type PersonalBest = {
   distance: string;
   time: string;
   race: string;
-  year: number;
+  /** Null when the year it was set is not recorded. */
+  year: number | null;
 };
 
 /**
- * Trail bests are real, taken from the UltraSignup record. Road bests —
- * including Grandma's, which is run every year — are not on UltraSignup, so
- * they are left as PLACEHOLDER rather than guessed at.
+ * Trail bests are exact, from the UltraSignup record. The road marathon best
+ * is Grandma's, which is not on UltraSignup — Connor reports it as sub-three,
+ * so it is recorded that way rather than invented to the second. Replace
+ * "Sub-3:00" with the real time and year when you have them to hand.
  */
 export const PERSONAL_BESTS: readonly PersonalBest[] = [
+  { distance: "Marathon (road)", time: "Sub-3:00", race: "Grandma's Marathon", year: null },
   { distance: "Marathon (trail)", time: "5:14:26", race: "Superior Fall Trail Race", year: 2023 },
   { distance: "50K", time: "5:40:35", race: "Afton Trail Run", year: 2024 },
   { distance: "50M", time: "13:20:41", race: "Superior Fall Trail Race", year: 2024 },
   { distance: "100M", time: "34:45:24", race: "Massanutten Mountain Trails", year: 2025 },
-  { distance: "Marathon (road)", time: "PLACEHOLDER", race: "Grandma's Marathon", year: 2026 },
 ];
 
 /**
