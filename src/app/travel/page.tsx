@@ -51,6 +51,16 @@ export default function TravelPage() {
               </div>
               <p className="text-ink-2 mt-3 max-w-[64ch]">{trip.summary}</p>
               <PhotoGrid photos={trip.photos} className="mt-5" priority={i === 0} />
+              {trip.standaloneHref && (
+                <a
+                  href={trip.standaloneHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-ink mt-5 inline-block font-mono text-[0.68rem] tracking-[0.13em] uppercase hover:underline"
+                >
+                  Open the interactive trip map →
+                </a>
+              )}
             </li>
           ))}
         </ol>

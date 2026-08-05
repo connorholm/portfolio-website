@@ -39,6 +39,13 @@ export type Trip = {
   summary: string;
   /** Rendered only where the file exists — see src/lib/photos.ts. */
   photos?: readonly Photo[];
+  /**
+   * A standalone artifact for this trip, when one exists — e.g. a static HTML
+   * page under /public. Deliberately a plain string, not a typed Next.js
+   * Route: it's not part of the app, so it opens in a new tab rather than
+   * being client-navigated to.
+   */
+  standaloneHref?: string;
 };
 
 export const TRIPS: readonly Trip[] = [
@@ -49,7 +56,8 @@ export const TRIPS: readonly Trip[] = [
     coords: [-19.02, 64.96],
     when: "August 2026",
     sort: "2026-08",
-    summary: "Just back from this one.",
+    summary:
+      "Just back from this one: nine days around the Ring Road, 41 stops from Keflavík to the last light in Reykjavík.",
     photos: [
       {
         src: "/images/iceland-skogafoss.jpg",
@@ -57,6 +65,7 @@ export const TRIPS: readonly Trip[] = [
         caption: "Skógafoss",
       },
     ],
+    standaloneHref: "/iceland-scrapbook/index.html",
   },
   {
     slug: "japan",
