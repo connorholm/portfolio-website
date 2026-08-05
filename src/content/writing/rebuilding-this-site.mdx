@@ -1,0 +1,67 @@
+---
+title: "Rebuilding this site"
+date: "2026-08-04"
+tag: "eng"
+summary: "The old version was a 2023 portfolio template that only knew about my code. Notes on what I changed, and why the design is a topographic map."
+---
+
+The previous version of this site was built in 2023 and it showed. Next 13 with the pages
+router, styled-components, a typewriter effect in the hero, and a list of the AP classes I
+took in high school. It was a portfolio for someone applying to internships, and I had
+stopped being that person a while ago.
+
+The more interesting problem was that it only knew about one third of my life. Nothing on it
+mentioned running, or travel, or anything you would actually learn about a person from
+talking to them. So the rebuild was less a redesign than a reframing.
+
+## One idea instead of a hobbies section
+
+The obvious move is to bolt a "Hobbies" heading onto the bottom of a résumé. That reads as
+two websites in a trench coat — the ultras become a fun fact and the engineering stays a job
+listing.
+
+What actually holds it together is that hundred-mile races and multi-year software projects
+reward the same narrow thing: staying with something whose payoff is a long way off, and
+managing yourself well enough to still be functional at the end. Once that is the thesis, the
+running section is not a digression. It is evidence.
+
+## Why the site looks like a map
+
+The visual system is topographic survey — contour lines, elevation profiles, route traces,
+mile markers. It is doing three jobs at once, which is why it works:
+
+- Contours and grid references are the language of **travel**.
+- Elevation profiles are the language of **vert**, and every race report opens with one.
+- Both are fundamentally **instrumentation** — the same impulse as a dashboard.
+
+The background of every page is a real contour field, generated with marching squares over a
+smooth scalar field and drawn to a canvas. It is seeded deterministically, so it renders
+identically on every load rather than shimmering into something new.
+
+## The stack
+
+The rebuild is Next.js 16 on the App Router, TypeScript in strict mode, and Tailwind v4 with
+a token layer. A few decisions worth recording:
+
+**Semantic tokens, not `dark:` variants.** Every colour is a CSS custom property redefined
+under `prefers-color-scheme`, then again under `[data-theme]` so an explicit toggle can
+override the OS in both directions. Components reference `bg-panel` and `text-ink-2` and are
+correct in both themes without a single conditional.
+
+**Charts are hand-authored SVG.** No charting library. The elevation profile is a
+Catmull-Rom spline converted to cubic beziers, rendered on the server. The draw-in animation
+uses `pathLength="1"`, which normalises the path so the dash maths needs no JavaScript to
+measure it.
+
+**The map is not a tile service.** It projects the world-atlas TopoJSON with `d3-geo` at
+build time and emits static paths, so it costs no client JavaScript and picks up the theme
+tokens like everything else.
+
+**Content is data, not components.** Races, trips, and timeline entries are typed files;
+posts are MDX. Adding a race means editing one array. The old site went stale largely because
+updating it meant editing React.
+
+## What is still missing
+
+Photographs, mostly. A design this typographic and this reliant on real imagery is thin
+without them, and that is the next thing to fix.
