@@ -65,7 +65,13 @@ export const TRIPS: readonly Trip[] = [
         caption: "Skógafoss",
       },
     ],
-    standaloneHref: "/iceland-scrapbook/index.html",
+    // Deliberately the directory form, not "/iceland-scrapbook/index.html".
+    // Vercel's static hosting for a Next export serves an index.html only at
+    // its directory path, and 404s on the literal filename — the reverse of
+    // `next dev`, which only serves the literal filename. Verify against a
+    // static server over the real `out/` build, not `next dev`, if this ever
+    // needs rechecking.
+    standaloneHref: "/iceland-scrapbook/",
   },
   {
     slug: "japan",
