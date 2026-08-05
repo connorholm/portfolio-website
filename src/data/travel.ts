@@ -37,8 +37,6 @@ export type Trip = {
   /** Sort key only, never rendered. Empty sorts last. */
   sort: string;
   summary: string;
-  /** Did you run there? With the streak running, mostly yes. */
-  ranThere?: boolean;
   /** Rendered only where the file exists — see src/lib/photos.ts. */
   photos?: readonly Photo[];
 };
@@ -52,7 +50,6 @@ export const TRIPS: readonly Trip[] = [
     when: "August 2026",
     sort: "2026-08",
     summary: "Just back from this one.",
-    ranThere: true,
     photos: [
       {
         src: "/images/iceland-skogafoss.jpg",
@@ -63,13 +60,12 @@ export const TRIPS: readonly Trip[] = [
   },
   {
     slug: "japan",
-    title: "Japan — Tokyo, Kyoto, Osaka",
+    title: "Japan: Tokyo, Kyoto, Osaka",
     country: "Japan",
     coords: [139.69, 35.69],
     when: "May 2026",
     sort: "2026-05",
     summary: "Three cities, moving south and west: Tokyo, then Kyoto, then Osaka.",
-    ranThere: true,
     photos: [
       {
         src: "/images/japan-meiji-shrine.jpg",
@@ -91,7 +87,6 @@ export const TRIPS: readonly Trip[] = [
     when: "Summer",
     sort: "2025-07",
     summary: "Alpine lakes and a lot of vertical, in the mountains south of town.",
-    ranThere: true,
     photos: [
       {
         src: "/images/bozeman-alpine-lake.jpg",

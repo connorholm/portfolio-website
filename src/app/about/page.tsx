@@ -27,7 +27,7 @@ export default function AboutPage() {
               <p>
                 I&rsquo;m a software engineer in {SITE.location}. I started writing code in a
                 high-school Java class in 2018, discovered I could put things on the App Store, and
-                never really stopped. Most of what I do now sits somewhere in machine learning —
+                never really stopped. Most of what I do now sits somewhere in machine learning:
                 vision models, OCR, and the unglamorous engineering that makes them usable on real,
                 messy input rather than a clean benchmark.
               </p>
@@ -42,22 +42,22 @@ export default function AboutPage() {
                   Vantix Strategies
                 </a>
                 , a boutique firm of forward deployed engineers who embed inside client teams and
-                ship production AI systems — not strategy decks — in under six weeks, with the
-                client owning the IP. And I&rsquo;m an AI Engineer at UnitedHealthcare, where I
-                built an observability platform spanning legacy and cloud-native systems, and a
-                benefits API that lets internal agents retrieve member data in natural language
-                through MCP servers.
+                ship production AI systems, not strategy decks, in under six weeks, with the client
+                owning the IP. And I&rsquo;m an AI Engineer at UnitedHealthcare, where I built an
+                observability platform spanning legacy and cloud-native systems, and a benefits API
+                that lets internal agents retrieve member data in natural language through MCP
+                servers.
               </p>
               <p>
-                Outside of that I run — far enough that it requires planning rather than enthusiasm
-                — and I ski, hike, and play a fair amount of pickleball, usually somewhere I
+                Outside of that I run, far enough that it requires planning rather than enthusiasm,
+                and I ski, hike, and play a fair amount of pickleball, usually somewhere I
                 haven&rsquo;t been before. The ultras in particular are not a sideline to the
                 engineering. A hundred-mile race and a multi-year project reward the same narrow
                 skill: staying with something whose payoff is a long way off, and managing yourself
                 well enough to still be functional at the end.
               </p>
               <p>
-                I studied computer science at the University of Minnesota — a BS in 2024, then a
+                I studied computer science at the University of Minnesota: a BS in 2024, then a
                 master&rsquo;s alongside full-time work, finished in 2025. Before all that I built
                 apps for my high school, won the Congressional App Challenge for Minnesota&rsquo;s
                 third district, and spent an unreasonable amount of time on a 3D iOS game.

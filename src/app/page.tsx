@@ -29,7 +29,7 @@ export default async function HomePage() {
             <h1 className="text-display max-w-[14ch]">{SITE.tagline}</h1>
             <Measure className="mt-7">
               <p className="text-lede text-ink-2">
-                I&rsquo;m Connor. I build software — mostly machine learning and the things around
+                I&rsquo;m Connor. I build software, mostly machine learning and the things around
                 it. The rest of the time I&rsquo;m running very long distances, on skis, up a trail,
                 or on a pickleball court, and fairly often somewhere I haven&rsquo;t been before.
                 This site is all of it, not just the part that fits on a résumé.
@@ -97,7 +97,7 @@ export default async function HomePage() {
         </div>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Running is the constant — at least a mile every day for the last four years. Everything
+            Running is the constant: at least a mile every day for the last four years. Everything
             else takes the months that suit it, and Minnesota does most of that scheduling.
           </p>
         </Measure>
@@ -152,7 +152,6 @@ export default async function HomePage() {
               <p className="font-display text-lg">{t.title}</p>
               <p className="text-ink-3 font-mono text-[0.66rem] tracking-[0.1em] uppercase">
                 {t.country} · {t.when}
-                {t.ranThere && " · ran there"}
               </p>
             </li>
           ))}
@@ -205,7 +204,7 @@ export default async function HomePage() {
         <h2 className="text-h2">Get in touch</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            I like hearing from people — about a project, a race, a route worth running somewhere I
+            I like hearing from people, about a project, a race, a route worth running somewhere I
             haven&rsquo;t been, or nothing in particular. Email is best.
           </p>
         </Measure>

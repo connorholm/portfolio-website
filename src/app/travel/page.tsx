@@ -16,7 +16,7 @@ export default function TravelPage() {
       <PageHeader
         eyebrow="Travel"
         title="Where I've been and what it was like"
-        lede="I plan trips the way I plan races: pick something slightly beyond what seems reasonable, then work out the logistics afterwards. The map is the index — each marker is a trip below."
+        lede="I plan trips the way I plan races: pick something slightly beyond what seems reasonable, then work out the logistics afterwards. The map is the index, and each marker is a trip below."
       />
 
       <Section rail="Map" note="The index">
@@ -50,11 +50,6 @@ export default function TravelPage() {
                 </p>
               </div>
               <p className="text-ink-2 mt-3 max-w-[64ch]">{trip.summary}</p>
-              {trip.ranThere && (
-                <p className="text-survey mt-3 font-mono text-[0.64rem] tracking-[0.12em] uppercase">
-                  Ran there
-                </p>
-              )}
               <PhotoGrid photos={trip.photos} className="mt-5" priority={i === 0} />
             </li>
           ))}

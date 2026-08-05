@@ -8,7 +8,7 @@ import { formatShortMonth } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Machine learning, mobile, and web projects — what they were for, what was hard, and what came of them.",
+    "Machine learning, mobile, and web projects: what they were for, what was hard, and what came of them.",
 };
 
 export default function WorkPage() {
@@ -17,7 +17,7 @@ export default function WorkPage() {
       <PageHeader
         eyebrow="Work"
         title="What I build, and what came of it"
-        lede="Mostly machine learning and the engineering around it, with a long detour through mobile. Each of these is here because something actually happened — it shipped, it won something, or it taught me the thing I needed next."
+        lede="Mostly machine learning and the engineering around it, with a long detour through mobile. Each of these is here because something actually happened: it shipped, it won something, or it taught me the thing I needed next."
       />
 
       <Section rail="Roles" note="Where I've worked">
@@ -67,7 +67,7 @@ export default function WorkPage() {
         {ARCHIVED_PROJECTS.length > 0 && (
           <details className="border-rule bg-panel mt-10 border">
             <summary className="text-ink-3 hover:text-accent cursor-pointer px-4 py-3 font-mono text-[0.68rem] tracking-[0.13em] uppercase">
-              Archive — {ARCHIVED_PROJECTS.length} earlier projects
+              Archive: {ARCHIVED_PROJECTS.length} earlier projects
             </summary>
             <ul className="border-rule border-t">
               {ARCHIVED_PROJECTS.map((p) => (
@@ -98,7 +98,7 @@ export default function WorkPage() {
         <h2 className="text-h2">What I work in</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Grouped by the kind of problem rather than listed as a wall of logos. Depth varies — the
+            Grouped by the kind of problem rather than listed as a wall of logos. Depth varies: the
             machine learning and backend rows are where I spend most of my time.
           </p>
         </Measure>

@@ -58,7 +58,7 @@ function RunningModules() {
           <ElevationProfile
             points={FEATURED_PROFILE}
             gain={FEATURED_PROFILE_GAIN}
-            caption="Superior 100 — measured from the course GPX"
+            caption="Superior 100, measured from the course GPX"
             startLabel="Gooseberry Falls"
             endLabel="Lutsen · mile 102.9"
           />

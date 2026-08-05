@@ -34,7 +34,7 @@ export const ROLES: readonly Role[] = [
     end: null,
     location: "Self-employed",
     summary:
-      "A firm of forward deployed engineers, built on the belief that the value of AI shows up in production rather than in a proof of concept. We embed as an extension of a client's engineering org, target under six weeks from kickoff to deployment, and hand over full IP — production code, not recommendations. The work spans AI orchestration (RAG, agents, LLM ops), embedded data engineering, and post-acquisition tech-stack consolidation.",
+      "A firm of forward deployed engineers, built on the belief that the value of AI shows up in production rather than in a proof of concept. We embed as an extension of a client's engineering org, target under six weeks from kickoff to deployment, and hand over full IP: production code, not recommendations. The work spans AI orchestration (RAG, agents, LLM ops), embedded data engineering, and post-acquisition tech-stack consolidation.",
     tags: ["Python", "LangChain", "Snowflake", "dbt", "RAG", "Agents"],
     href: "https://www.vantixstrategies.com/",
   },
@@ -50,7 +50,7 @@ export const ROLES: readonly Role[] = [
   },
   {
     org: "UnitedHealth Group",
-    title: "Software Engineering Intern — Cloud",
+    title: "Software Engineering Intern, Cloud",
     start: "2024-06",
     end: "2025-06",
     location: "Eden Prairie, MN",
@@ -60,7 +60,7 @@ export const ROLES: readonly Role[] = [
   },
   {
     org: "UnitedHealth Group",
-    title: "Software Engineering Intern — AI/ML",
+    title: "Software Engineering Intern, AI/ML",
     start: "2023-06",
     end: "2023-08",
     location: "Eden Prairie, MN",
@@ -70,12 +70,12 @@ export const ROLES: readonly Role[] = [
   },
   {
     org: "The Jed Mahonis Group",
-    title: "Software Engineer — Mobile",
+    title: "Software Engineer, Mobile",
     start: "2021-05",
     end: "2022-09",
     location: "St. Louis Park, MN",
     summary:
-      "Built client Android applications in Kotlin and Java across more than three apps — authentication, API integration, Google Maps, and the user interfaces on top of them.",
+      "Built client Android applications in Kotlin and Java across more than three apps: authentication, API integration, Google Maps, and the user interfaces on top of them.",
     tags: ["Kotlin", "Java", "Android", "Google Maps"],
   },
   {
@@ -85,7 +85,7 @@ export const ROLES: readonly Role[] = [
     end: "2021-05",
     location: "Eden Prairie, MN",
     summary:
-      "Volunteered at Chamber events and built connections with local businesses — the first thing on this list, and the only one with no code in it.",
+      "Volunteered at Chamber events and built connections with local businesses. The first thing on this list, and the only one with no code in it.",
     tags: [],
   },
 ];
@@ -115,7 +115,7 @@ export const PROJECTS: readonly Project[] = [
     title: "Luup",
     outcome: "A SaaS platform that finds the people worth knowing in a network you already have.",
     description:
-      "Surfaces professional connections by shared criteria — alumni, past employers, location — with a dashboard for matches, companies, and roles, AI-generated outreach emails, and a discovery feed that keeps suggesting new people.",
+      "Surfaces professional connections by shared criteria (alumni, past employers, location) with a dashboard for matches, companies, and roles, AI-generated outreach emails, and a discovery feed that keeps suggesting new people.",
     year: 2026,
     tags: ["TypeScript", "Node.js", "Postgres", "Google Gemini"],
     icon: "network",
@@ -124,7 +124,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: "py-doc",
     title: "Py-Doc",
-    outcome: "Published on PyPI — document-layout computer vision as an open-source library.",
+    outcome: "Document-layout computer vision, published on PyPI as an open-source library.",
     description:
       "Makes document-layout CV and OCR accessible from a few lines of Python. An object-detection CNN trained on IBM's PubLayNet dataset parses the structure of a page, then Tesseract extracts the text region by region rather than treating the page as one flat block.",
     year: 2025,
@@ -139,7 +139,7 @@ export const PROJECTS: readonly Project[] = [
     title: "TikTok Watermark Remover",
     outcome: "Object detection plus inpainting, trained end to end to erase a moving watermark.",
     description:
-      "A YOLOv7 detector locates the watermark frame by frame — it drifts around the video, so a fixed mask does not work — and computer-vision inpainting reconstructs what was behind it. The interesting part was the training data: the detector needed watermarks composited over enough backgrounds that it learned the mark rather than the content underneath.",
+      "A YOLOv7 detector locates the watermark frame by frame, since it drifts around the video and a fixed mask will not work. Computer-vision inpainting then reconstructs what was behind it. The interesting part was the training data: the detector needed watermarks composited over enough backgrounds that it learned the mark rather than the content underneath.",
     year: 2023,
     tags: ["PyTorch", "YOLOv7", "Computer Vision", "Python"],
     image: "/images/watermark-detect.jpg",
@@ -223,7 +223,7 @@ export const PROJECTS: readonly Project[] = [
     title: "Python Chat App",
     outcome: "Terminal and GUI clients over raw sockets, talking to a server I ran myself.",
     description:
-      "A chat application in two forms — a terminal client and a Tkinter GUI — communicating through a public Ubuntu server. Mostly an excuse to learn sockets properly.",
+      "A chat application in two forms, a terminal client and a Tkinter GUI, communicating through a public Ubuntu server. Mostly an excuse to learn sockets properly.",
     year: 2020,
     tags: ["Python", "Sockets", "Tkinter"],
     image: "/images/chat-app.png",

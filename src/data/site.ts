@@ -12,7 +12,7 @@ export const SITE = {
   domain: "connorholm.com",
   url: "https://www.connorholm.com",
   title: "Connor Holm",
-  tagline: "I build software and I go long.",
+  tagline: "Built to keep going.",
   description:
     "Software engineer, ultrarunner, and traveller. Machine learning and mobile work, race reports, trip logs, and whatever I am currently thinking about.",
   email: "connorjholm@gmail.com",
@@ -81,21 +81,21 @@ export type StatusCell = {
 export const STATUS: readonly StatusCell[] = [
   {
     key: "Building",
-    value: "AI systems at Vantix Strategies & UnitedHealthcare",
+    value: "Vantix Strategies, and an AI Engineer at UnitedHealthcare",
     detail:
-      "Running a firm of forward deployed engineers, and building AI observability and agentic systems in production.",
+      "Growing an AI forward deployed engineering firm for businesses looking to optimize their processes, while working full-time as an AI Engineer at UnitedHealthcare.",
     since: "2026-08-01",
   },
   {
     key: "Training for",
-    value: "Superior Fall Trail Race — 100 Miler",
+    value: "Superior Fall Trail Race, 100 Miler",
     detail: "100 miles through the Sawtooth Mountains in Lutsen, MN, on 11 September 2026.",
     since: "2026-08-01",
   },
   {
     key: "Last trip",
     value: "Iceland",
-    detail: "Back a few days ago. Japan — Tokyo, Kyoto, Osaka — was in May.",
+    detail: "Back a few days ago. Japan (Tokyo, Kyoto, Osaka) was in May.",
     since: "2026-08-01",
   },
 ] as const;

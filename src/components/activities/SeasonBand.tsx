@@ -76,7 +76,7 @@ export function SeasonBand({ activities }: { activities: readonly Activity[] }) 
                         className={`mx-auto block h-3.5 ${
                           on ? (now ? "bg-accent" : "bg-accent/35") : now ? "bg-rule" : "bg-rule/40"
                         }`}
-                        title={`${activity.name} — ${MONTH_NAMES[i]}: ${on ? "in season" : "off"}`}
+                        title={`${activity.name}, ${MONTH_NAMES[i]}: ${on ? "in season" : "off"}`}
                       />
                     </td>
                   );

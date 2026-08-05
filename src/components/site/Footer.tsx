@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="font-display text-h3">{SITE.tagline}</p>
           <p className="text-ink-2 mt-2 max-w-[38ch] text-sm">
-            {SITE.name} — {SITE.location}. Best way to reach me is email.
+            {SITE.name}, {SITE.location}. Best way to reach me is email.
           </p>
           <a
             href={`mailto:${SITE.email}`}

@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description: "Essays on engineering, running, and travel — one feed, three tags.",
+  description: "Essays on engineering, running, and travel: one feed, three tags.",
 };
 
 export default async function WritingPage() {

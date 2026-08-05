@@ -64,7 +64,7 @@ export const ACTIVITIES: readonly Activity[] = [
     name: "Running",
     tagline: "At least a mile every day for four years, and occasionally a hundred at once.",
     summary:
-      "It started at the Superior Fall Trail Race marathon in 2023 and has gone up in distance every year since — 50K at Afton, the Superior 50, then a hundred at Massanutten in 2025. Underneath the racing is a streak: at least one mile every single day for over four years. In September 2026 I go back to the Sawtooth Mountains for the Superior 100.",
+      "It started at the Superior Fall Trail Race marathon in 2023 and has gone up in distance every year since: 50K at Afton, the Superior 50, then a hundred at Massanutten in 2025. Underneath the racing is a streak: at least one mile every single day for over four years. In September 2026 I go back to the Sawtooth Mountains for the Superior 100.",
     months: ALL_YEAR,
     // Race counts are derived by hand from RACES below — update both together.
     stats: [
@@ -78,13 +78,13 @@ export const ACTIVITIES: readonly Activity[] = [
       {
         src: "/images/mmt-100-finish.jpg",
         alt: "Two runners under the Massanutten Mountain Trails 100 Mile Run finish arch, holding belt buckles and trekking poles",
-        caption: "Massanutten, 2025 — buckle in hand",
+        caption: "Massanutten 2025, buckle in hand",
       },
     ],
     highlights: [
       {
         date: "2025-05-17",
-        text: "Finished my first hundred at Massanutten Mountain Trails in 34:45:24 — rocky the entire way.",
+        text: "Finished my first hundred at Massanutten Mountain Trails in 34:45:24, rocky the entire way.",
       },
       {
         date: "2025-09-19",
@@ -98,7 +98,7 @@ export const ACTIVITIES: readonly Activity[] = [
       {
         date: null,
         when: "Every June",
-        text: "Grandma's Marathon in Duluth — the one race I run every single year.",
+        text: "Grandma's Marathon in Duluth, the one race I run every single year.",
       },
     ],
   },
@@ -172,7 +172,7 @@ export const RACES: readonly Race[] = [
   {
     slug: "superior-100-2026",
     date: "2026-09-11",
-    name: "Superior Fall Trail Race — 100 Miler",
+    name: "Superior Fall Trail Race, 100 Miler",
     location: "Lutsen, MN",
     distance: 100,
     vert: null,
@@ -185,7 +185,7 @@ export const RACES: readonly Race[] = [
   {
     slug: "last-dot-standing-2025",
     date: "2025-09-19",
-    name: "Last Dot Standing — Last Person Standing",
+    name: "Last Dot Standing, Last Person Standing",
     location: "Belleville, WI",
     distance: 75.6,
     vert: null,
@@ -211,7 +211,7 @@ export const RACES: readonly Race[] = [
   {
     slug: "superior-50-2024",
     date: "2024-09-07",
-    name: "Superior Fall Trail Race — 50 Miler",
+    name: "Superior Fall Trail Race, 50 Miler",
     location: "Lutsen, MN",
     distance: 50,
     vert: null,
@@ -223,7 +223,7 @@ export const RACES: readonly Race[] = [
   {
     slug: "afton-50k-2024",
     date: "2024-07-06",
-    name: "Afton Trail Run — 50K",
+    name: "Afton Trail Run, 50K",
     location: "Afton, MN",
     distance: 31,
     vert: null,
@@ -235,7 +235,7 @@ export const RACES: readonly Race[] = [
   {
     slug: "superior-marathon-2023",
     date: "2023-09-09",
-    name: "Superior Fall Trail Race — Marathon",
+    name: "Superior Fall Trail Race, Marathon",
     location: "Lutsen, MN",
     distance: 26.2,
     vert: null,
@@ -282,7 +282,7 @@ export const PERSONAL_BESTS: readonly PersonalBest[] = [
 export const CURRENT_BLOCK = {
   goal: "the Superior 100",
   focus:
-    "102.9 miles along the Superior Hiking Trail with about 18,400 feet of climbing, none of it in one piece — the course trades a thousand feet up and down for the better part of two days.",
+    "102.9 miles along the Superior Hiking Trail with about 18,400 feet of climbing, none of it in one piece. The course trades a thousand feet up and down for the better part of two days.",
 } as const;
 
 /**

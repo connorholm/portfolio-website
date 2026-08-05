@@ -9,7 +9,7 @@ import { daysUntil, formatDate } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Activities",
   description:
-    "Ultrarunning, Nordic skiing, hiking, and pickleball — what I do when I am not at a desk.",
+    "Ultrarunning, Nordic skiing, hiking, and pickleball: what I do when I am not at a desk.",
 };
 
 export default function ActivitiesPage() {
@@ -27,9 +27,9 @@ export default function ActivitiesPage() {
         <h2 className="text-h2">A year, roughly</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Running is the constant — a mile a day minimum, whatever the weather is doing. Around
-            it, Minnesota does the scheduling: skis from December, trails and a tent from spring
-            through fall, pickleball once it is properly warm, and lifting underneath all of it.
+            Running is the constant: a mile a day minimum, whatever the weather is doing. Around it,
+            Minnesota does the scheduling: skis from December, trails and a tent from spring through
+            fall, pickleball once it is properly warm, and lifting underneath all of it.
           </p>
         </Measure>
         <div className="mt-7">
