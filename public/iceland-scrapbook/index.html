@@ -318,7 +318,6 @@ const TRIP = {"stops":[{"short":"KEF","name":"Keflav\u00edk International Airpor
     return M[+d.slice(5,7)-1]+' '+(+d.slice(8,10));};
 
   const map=L.map('map',{zoomControl:false,attributionControl:false,zoomSnap:.25}).setView([64.96,-18.9],6.6);
-  L.control.zoom({position:'bottomright'}).addTo(map);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd'}).addTo(map);
 
   // faint full route (gap-aware) — dotted "vintage map" preview of the not-yet-reached road
