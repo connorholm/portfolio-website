@@ -15,7 +15,7 @@ npm run dev
 | Script           | Does                                               |
 | ---------------- | -------------------------------------------------- |
 | `npm run dev`    | Dev server on :3000                                |
-| `npm run build`  | Production build; static export written to `./out` |
+| `npm run build`  | Production build                                   |
 | `npm run check`  | `tsc --noEmit` then ESLint — what CI runs          |
 | `npm run format` | Prettier over the repo                             |
 
@@ -25,7 +25,7 @@ Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 ·
 No UI or charting libraries: the elevation profiles, season band, world map, and
 contour background are all hand-authored SVG or canvas.
 
-Deployed as a static export to GitHub Pages via `.github/workflows/nextjs.yml`.
+Deployed to Vercel on every push to `master`.
 
 ## Editing content
 
@@ -88,9 +88,3 @@ Typefaces: Barlow Condensed (display), Source Serif 4 (body), IBM Plex Mono (dat
 The font variables are declared on `<html>` rather than `<body>` — Tailwind's
 `@theme` resolves them at `:root`, so anywhere else leaves every `var()` invalid.
 
-## Moving off static export
-
-Static export is what keeps GitHub Pages working. It also rules out live Strava
-data, a contact form, and server-side image optimisation. To move to a Node host,
-delete `output` and `images.unoptimized` from `next.config.ts` — nothing else in
-the app depends on either.

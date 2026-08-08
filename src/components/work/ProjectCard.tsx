@@ -25,7 +25,7 @@ export function ProjectCard({
         </div>
       ) : (
         project.icon && (
-          <div className="border-rule bg-panel-2 aspect-[16/10] border-b p-6">
+          <div className="border-rule bg-panel-2 relative aspect-[16/10] overflow-hidden border-b p-6">
             <ProjectGlyph kind={project.icon} />
           </div>
         )
