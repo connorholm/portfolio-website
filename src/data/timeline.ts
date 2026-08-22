@@ -123,6 +123,18 @@ export const TIMELINE: readonly TimelineEntry[] = [
     thread: "work",
     text: "Observability work prevented over $1M in annual losses by cutting mean time to recovery.",
   },
+  {
+    year: 2026,
+    month: 5,
+    thread: "work",
+    text: "Picked as one of 15 engineers to launch UnitedHealth Group's forward deployed engineering practice.",
+  },
+  {
+    year: 2026,
+    month: 8,
+    thread: "work",
+    text: "Left UnitedHealthcare to run Vantix Strategies full time, starting with Umbrage, a Bain & Company subsidiary.",
+  },
   { year: 2026, month: 5, thread: "travel", text: "Two weeks in Japan: Tokyo, Kyoto, Osaka." },
   { year: 2026, month: 8, thread: "travel", text: "Iceland." },
 ];

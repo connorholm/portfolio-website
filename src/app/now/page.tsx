@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  *
  * TODO(connor): update LAST_UPDATED whenever you edit this page.
  */
-const LAST_UPDATED = "2026-08-01";
+const LAST_UPDATED = "2026-08-22";
 
 /** Joins a list as "a, b and c". */
 function sentenceList(items: readonly string[]): string {
@@ -40,14 +40,14 @@ export default function NowPage() {
         <h2 className="text-h2">Building</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Running <strong className="text-ink">Vantix Strategies</strong>, a firm of forward
-            deployed engineers who embed with client teams and ship production AI systems (RAG
-            pipelines, agents, and data platforms) in under six weeks.
+            Running <strong className="text-ink">Vantix Strategies</strong> full time as of this
+            month &mdash; a firm of forward deployed engineers who embed with client teams and ship
+            production AI systems (RAG pipelines, agents, and data platforms) in under six weeks.
           </p>
           <p className="text-ink-2 mt-3">
-            At <strong className="text-ink">UnitedHealthcare</strong>, building the enterprise AI
-            observability platform and a natural-language benefits API, both leaning on MCP servers
-            for agentic capability.
+            The first engagement is <strong className="text-ink">Umbrage</strong>, a Bain &amp;
+            Company subsidiary, where I&rsquo;m Director of AI Engineering, leading AI work across
+            their client engagements.
           </p>
         </Measure>
       </Section>

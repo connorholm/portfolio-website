@@ -9,6 +9,11 @@
  * Dates confirmed by Connor: Vantix was founded January 2026, and the cloud
  * internship ended June 2025 (LinkedIn's "Mar 2026" was wrong).
  *
+ * August 2026: Connor left UnitedHealthcare to run Vantix full time. Umbrage is
+ * an engagement delivered through Vantix rather than a separate employer, but it
+ * gets its own entry here because that is how the résumé reads and because the
+ * title is different.
+ *
  * Entries lead with what happened rather than what the thing is. Anything
  * older than university is `archived` and renders in a collapsed list.
  */
@@ -28,21 +33,41 @@ export type Role = {
 
 export const ROLES: readonly Role[] = [
   {
+    org: "Umbrage",
+    title: "Director of AI Engineering",
+    start: "2026-08",
+    end: null,
+    location: "Remote",
+    summary:
+      "Vantix's first engagement, and the reason I left UnitedHealthcare. Umbrage is a Bain & Company subsidiary; I lead AI engineering across their client engagements, embedding with the teams that own a business process to work out which part of it genuinely benefits from a model and which part just needs better software, then shipping the result.",
+    tags: ["AI engineering", "Client delivery", "RAG", "Agents"],
+  },
+  {
     org: "Vantix Strategies",
     title: "Founder & Principal Consultant",
     start: "2026-01",
     end: null,
     location: "Self-employed",
     summary:
-      "A firm of forward deployed engineers, built on the belief that the value of AI shows up in production rather than in a proof of concept. We embed as an extension of a client's engineering org, target under six weeks from kickoff to deployment, and hand over full IP: production code, not recommendations. The work spans AI orchestration (RAG, agents, LLM ops), embedded data engineering, and post-acquisition tech-stack consolidation.",
+      "A firm of forward deployed engineers, built on the belief that the value of AI shows up in production rather than in a proof of concept. We embed as an extension of a client's engineering org, target under six weeks from kickoff to deployment, and hand over full IP: production code, not recommendations. The work spans AI orchestration (RAG, agents, LLM ops), embedded data engineering, and post-acquisition tech-stack consolidation. Full time since August 2026, starting with Umbrage, a Bain & Company subsidiary.",
     tags: ["Python", "LangChain", "Snowflake", "dbt", "RAG", "Agents"],
     href: "https://www.vantixstrategies.com/",
   },
   {
     org: "UnitedHealthcare",
+    title: "Forward Deployed Engineer",
+    start: "2026-05",
+    end: "2026-08",
+    location: "Minnetonka, MN",
+    summary:
+      "Picked as one of 15 engineers out of UnitedHealth Group Technology's 13,000 to start the company's forward deployed engineering practice, embedded with business units rather than sitting on a platform team. Redefined the risk adjustment model inside the finance division, a system tied to more than $150B in revenue, and built an AI-backed vendor relations dashboard that let executives manage third-party relationships directly. Also built the FDE deployment platform itself, standardizing environments across AWS, Azure, and GCP so a new engagement could reach production without rebuilding the runway each time.",
+    tags: ["Python", "RAG", "Agents", "AWS", "Azure", "GCP"],
+  },
+  {
+    org: "UnitedHealthcare",
     title: "AI Engineer",
     start: "2025-07",
-    end: null,
+    end: "2026-05",
     location: "Minnetonka, MN",
     summary:
       "Architected an enterprise AI observability platform covering both legacy and cloud-native applications, preventing over $1M in annual losses by cutting mean time to recovery on systems where downtime is valued at $600K per minute. Also built custom pipeline tooling and MCP servers that let autonomous agents map complex system dependencies, and agent-driven data retrieval that made member information far easier to reach internally.",
@@ -267,7 +292,15 @@ export type SkillGroup = {
 export const SKILLS: readonly SkillGroup[] = [
   {
     area: "AI systems",
-    items: ["LangChain", "RAG", "LLM agents", "MCP servers", "LLM ops", "Evals"],
+    items: [
+      "LangChain",
+      "RAG",
+      "LLM agents",
+      "MCP servers",
+      "Vector databases",
+      "LLM ops",
+      "Evals",
+    ],
   },
   {
     area: "Machine learning",
@@ -279,7 +312,7 @@ export const SKILLS: readonly SkillGroup[] = [
   },
   {
     area: "Platform",
-    items: ["Docker", "Kubernetes", "Helm", "GitHub Actions", "Octopus Deploy", "Azure"],
+    items: ["Docker", "Kubernetes", "Helm", "Terraform", "GitHub Actions", "AWS", "Azure", "GCP"],
   },
   {
     area: "Web",

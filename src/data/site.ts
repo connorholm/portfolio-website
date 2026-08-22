@@ -14,7 +14,7 @@ export const SITE = {
   title: "Connor Holm",
   tagline: "Built to keep going.",
   description:
-    "Software engineer, ultrarunner, and traveller. Machine learning and mobile work, race reports, trip logs, and whatever I am currently thinking about.",
+    "AI engineer, founder of Vantix Strategies, ultrarunner, and traveller. Production AI and machine learning work, plus activities and trip logs.",
   email: "connorjholm@gmail.com",
   contentStatus: "live" as "draft" | "live",
   location: "Eden Prairie, Minnesota",
@@ -80,16 +80,16 @@ export type StatusCell = {
 export const STATUS: readonly StatusCell[] = [
   {
     key: "Building",
-    value: "Vantix Strategies, and an AI Engineer at UnitedHealthcare",
+    value: "Vantix Strategies, full time",
     detail:
-      "Growing an AI forward deployed engineering firm for businesses looking to optimize their processes, while working full-time as an AI Engineer at UnitedHealthcare.",
-    since: "2026-08-01",
+      "Left UnitedHealthcare in August to run my forward deployed engineering firm full time. First engagement: Director of AI Engineering at Umbrage, a Bain & Company subsidiary.",
+    since: "2026-08-22",
   },
   {
     key: "Training for",
     value: "Superior Fall Trail Race, 100 Miler",
     detail: "100 miles through the Sawtooth Mountains in Lutsen, MN, on 11 September 2026.",
-    since: "2026-08-01",
+    since: "2026-08-22",
   },
   {
     key: "Last trip",
