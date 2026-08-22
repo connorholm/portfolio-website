@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV, SITE, SOCIALS } from "@/data/site";
+import { NAV, RESUME, SITE, SOCIALS } from "@/data/site";
 
 export function Footer() {
   return (
@@ -46,6 +46,16 @@ export function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={RESUME.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-2 hover:text-accent text-sm"
+              >
+                Résumé <span className="text-ink-3 font-mono text-xs">PDF</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

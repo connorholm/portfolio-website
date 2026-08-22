@@ -30,6 +30,17 @@ export const HERO_IMAGE: { src: string; alt: string } | null = {
   alt: "Connor standing with arms outstretched in front of Skógafoss in Iceland, a rainbow arcing across the spray",
 };
 
+/**
+ * The résumé PDF. Lives in /public so it is served as a plain static file —
+ * the path is centralised here because three separate places link to it
+ * (the hero, the about page, and the footer).
+ */
+export const RESUME = {
+  href: "/connor-holm-resume.pdf",
+  /** ISO date of the version currently in /public. Bump when the file changes. */
+  updated: "2026-08-22",
+} as const;
+
 export type NavItem = {
   /** Typed against the app's real routes — a broken nav link fails the build. */
   href: Route;
