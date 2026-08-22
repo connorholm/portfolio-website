@@ -77,13 +77,13 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section rail="Résumé" note="The short version">
-        <h2 className="text-h2">One page, if you need it</h2>
+      <Section rail="Résumé" note="Roles and dates">
+        <h2 className="text-h2">The same story, in the usual format</h2>
         <Measure className="mt-4">
           <p className="text-ink-2">
-            Everything above compressed to a single page: roles, dates, the stack, and the numbers
-            attached to each. Useful if you are evaluating me for something specific; the rest of
-            this site is the version that does not fit on a page.
+            Roles, dates, the stack, and the numbers attached to each, in the format people ask for.
+            Useful if you are evaluating me for something specific; the rest of this site is
+            everything the format leaves out.
           </p>
         </Measure>
         <a
