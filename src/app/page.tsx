@@ -30,7 +30,7 @@ export default function HomePage() {
                 I&rsquo;m Connor. I build software, mostly machine learning and the things around
                 it. The rest of the time I&rsquo;m running very long distances, on skis, up a trail,
                 or on a pickleball court, and fairly often somewhere I haven&rsquo;t been before.
-                This site is all of it, not just the part that fits on a résumé.
+                This site is all of it, not just the part with a job title attached.
               </p>
             </Measure>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
