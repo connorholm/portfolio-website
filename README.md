@@ -38,7 +38,6 @@ Content is data, never components. Nothing below requires touching a `.tsx` file
 | Activities, seasons, races, PRs, gear    | `src/data/activities.ts`    |
 | Countries, trips, counters               | `src/data/travel.ts`        |
 | The merged work/activity/travel timeline | `src/data/timeline.ts`      |
-| Posts and race reports                   | `src/content/writing/*.mdx` |
 
 ### Adding an activity
 
@@ -51,22 +50,6 @@ Running is the only activity with a race log, PR board, and course profile.
 Those modules key off `slug === "ultrarunning"` in
 `src/app/activities/[slug]/page.tsx` rather than being forced onto every sport —
 an activity with just a tagline and a season renders perfectly well.
-
-### Adding a post
-
-Drop an `.mdx` file into `src/content/writing/` with this frontmatter:
-
-```yaml
----
-title: "Post title"
-date: "2026-08-04"
-tag: "eng" # eng | activity | travel
-summary: "One sentence — shows in the feed and in link previews."
-draft: false # true keeps it out of the build entirely
----
-```
-
-`src/content/writing/_template-race-report.mdx` is a marked-draft skeleton to copy.
 
 ## Content status
 

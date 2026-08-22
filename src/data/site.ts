@@ -46,7 +46,6 @@ export const NAV: readonly NavItem[] = [
     blurb: "Running, skiing, hiking, pickleball",
   },
   { href: "/travel", label: "Travel", blurb: "Where I have been and what it was like" },
-  { href: "/writing", label: "Writing", blurb: "Essays on all three, one feed" },
   { href: "/about", label: "About", blurb: "The long version, in order" },
   { href: "/now", label: "Now", blurb: "What has my attention this month" },
 ] as const;

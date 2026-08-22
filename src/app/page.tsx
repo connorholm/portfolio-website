@@ -10,11 +10,9 @@ import { FEATURED_PROJECTS } from "@/data/work";
 import { ACTIVITIES, NEXT_RACE } from "@/data/activities";
 import { SITE } from "@/data/site";
 import { RECENT_TRIPS, TRAVEL_TOTALS, VISITED_COUNTRY_IDS } from "@/data/travel";
-import { getPosts, TAG_LABEL } from "@/lib/content";
 import { daysUntil, formatDate } from "@/lib/format";
 
-export default async function HomePage() {
-  const posts = (await getPosts()).slice(0, 3);
+export default function HomePage() {
   const countdown = NEXT_RACE ? daysUntil(NEXT_RACE.date) : null;
 
   return (
@@ -156,47 +154,6 @@ export default async function HomePage() {
             </li>
           ))}
         </ul>
-      </Section>
-
-      {/* ---------- Writing ---------- */}
-      <Section rail="Writing" note="One feed" id="writing">
-        <div className="flex flex-wrap items-baseline justify-between gap-4">
-          <h2 className="text-h2">Recently written</h2>
-          <Link
-            href="/writing"
-            className="text-accent-ink font-mono text-[0.68rem] tracking-[0.13em] uppercase hover:underline"
-          >
-            All writing →
-          </Link>
-        </div>
-
-        {posts.length === 0 ? (
-          <p className="text-ink-2 mt-6">
-            Nothing published yet. Drop an{" "}
-            <span className="text-survey font-mono text-sm">.mdx</span> file into{" "}
-            <span className="text-survey font-mono text-sm">src/content/writing/</span> and it shows
-            up here.
-          </p>
-        ) : (
-          <ul className="mt-7">
-            {posts.map((post) => (
-              <li key={post.slug} className="border-rule last:border-rule border-t last:border-b">
-                <Link href={`/writing/${post.slug}`} className="group block py-5">
-                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                    <span className="text-accent font-mono text-[0.64rem] tracking-[0.13em] uppercase">
-                      {TAG_LABEL[post.tag]}
-                    </span>
-                    <span className="tabular text-ink-3 font-mono text-[0.64rem]">
-                      {formatDate(post.date)}
-                    </span>
-                  </div>
-                  <p className="text-h3 group-hover:text-accent mt-1">{post.title}</p>
-                  <p className="text-ink-2 mt-1 max-w-[62ch]">{post.summary}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
       </Section>
 
       {/* ---------- Contact ---------- */}
