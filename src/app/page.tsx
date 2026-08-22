@@ -8,7 +8,7 @@ import { ProjectCard } from "@/components/work/ProjectCard";
 import { SeasonBand } from "@/components/activities/SeasonBand";
 import { FEATURED_PROJECTS } from "@/data/work";
 import { ACTIVITIES, NEXT_RACE } from "@/data/activities";
-import { SITE } from "@/data/site";
+import { RESUME, SITE } from "@/data/site";
 import { RECENT_TRIPS, TRAVEL_TOTALS, VISITED_COUNTRY_IDS } from "@/data/travel";
 import { daysUntil, formatDate } from "@/lib/format";
 
@@ -40,6 +40,14 @@ export default function HomePage() {
               >
                 The long version →
               </Link>
+              <a
+                href={RESUME.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-3 hover:text-accent font-mono text-[0.7rem] tracking-[0.14em] uppercase"
+              >
+                Résumé (PDF) →
+              </a>
               <a
                 href={`mailto:${SITE.email}`}
                 className="text-ink-3 hover:text-accent font-mono text-[0.7rem] tracking-[0.14em] uppercase"

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { HAS_PORTRAIT, Portrait } from "@/components/site/Portrait";
 import { Timeline, ThreadKey } from "@/components/about/Timeline";
 import { Measure, PageHeader, Section } from "@/components/ui/Section";
-import { SITE } from "@/data/site";
+import { RESUME, SITE } from "@/data/site";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "About",
@@ -74,6 +75,28 @@ export default function AboutPage() {
           </Measure>
           <Portrait />
         </div>
+      </Section>
+
+      <Section rail="Résumé" note="The short version">
+        <h2 className="text-h2">One page, if you need it</h2>
+        <Measure className="mt-4">
+          <p className="text-ink-2">
+            Everything above compressed to a single page: roles, dates, the stack, and the numbers
+            attached to each. Useful if you are evaluating me for something specific; the rest of
+            this site is the version that does not fit on a page.
+          </p>
+        </Measure>
+        <a
+          href={RESUME.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-accent text-accent-ink hover:bg-accent hover:text-ground mt-6 inline-block border px-5 py-2.5 font-mono text-sm transition-colors"
+        >
+          Download résumé (PDF) →
+        </a>
+        <p className="text-ink-3 mt-3 font-mono text-[0.66rem] tracking-[0.1em] uppercase">
+          Updated {formatDate(RESUME.updated)}
+        </p>
       </Section>
 
       <Section rail="Timeline" note="All three threads">
