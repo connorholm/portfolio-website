@@ -66,6 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE.url,
     email: `mailto:${SITE.email}`,
     description: SITE.description,
+    jobTitle: "Founder & Principal Consultant",
+    worksFor: {
+      "@type": "Organization",
+      name: "Vantix Strategies",
+      url: "https://www.vantixstrategies.com/",
+    },
     homeLocation: SITE.location,
   };
 

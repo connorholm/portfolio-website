@@ -32,7 +32,7 @@ export default function AboutPage() {
                 messy input rather than a clean benchmark.
               </p>
               <p>
-                These days that splits two ways. I founded{" "}
+                That work now runs through{" "}
                 <a
                   href="https://www.vantixstrategies.com/"
                   target="_blank"
@@ -41,12 +41,20 @@ export default function AboutPage() {
                 >
                   Vantix Strategies
                 </a>
-                , a boutique firm of forward deployed engineers who embed inside client teams and
-                ship production AI systems, not strategy decks, in under six weeks, with the client
-                owning the IP. And I&rsquo;m an AI Engineer at UnitedHealthcare, where I built an
-                observability platform spanning legacy and cloud-native systems, and a benefits API
-                that lets internal agents retrieve member data in natural language through MCP
-                servers.
+                , the firm I founded in January 2026: a boutique group of forward deployed engineers
+                who embed inside client teams and ship production AI systems, not strategy decks, in
+                under six weeks, with the client owning the IP. In August 2026 I left my full-time
+                job to run it full time, starting with Umbrage, a Bain &amp; Company subsidiary,
+                where I&rsquo;m Director of AI Engineering.
+              </p>
+              <p>
+                The full-time job was UnitedHealthcare. I spent a year there as an AI Engineer,
+                building an observability platform spanning legacy and cloud-native systems and a
+                benefits API that lets internal agents retrieve member data in natural language
+                through MCP servers. Then I was picked as one of 15 engineers, out of roughly 13,000
+                in UnitedHealth Group Technology, to start the company&rsquo;s forward deployed
+                engineering practice &mdash; embedded with the business units themselves, which
+                turned out to be good practice for doing the same thing on my own.
               </p>
               <p>
                 Outside of that I run, far enough that it requires planning rather than enthusiasm,
