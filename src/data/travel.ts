@@ -39,13 +39,6 @@ export type Trip = {
   summary: string;
   /** Rendered only where the file exists — see src/lib/photos.ts. */
   photos?: readonly Photo[];
-  /**
-   * A standalone artifact for this trip, when one exists — e.g. a static HTML
-   * page under /public. Deliberately a plain string, not a typed Next.js
-   * Route: it's not part of the app, so it opens in a new tab rather than
-   * being client-navigated to.
-   */
-  standaloneHref?: string;
 };
 
 export const TRIPS: readonly Trip[] = [
@@ -65,13 +58,6 @@ export const TRIPS: readonly Trip[] = [
         caption: "Skógafoss",
       },
     ],
-    // Deliberately the directory form, not "/iceland-scrapbook/index.html".
-    // Vercel's static hosting for a Next export serves an index.html only at
-    // its directory path, and 404s on the literal filename — the reverse of
-    // `next dev`, which only serves the literal filename. Verify against a
-    // static server over the real `out/` build, not `next dev`, if this ever
-    // needs rechecking.
-    standaloneHref: "/iceland-scrapbook/",
   },
   {
     slug: "japan",
