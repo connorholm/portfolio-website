@@ -42,10 +42,10 @@ export default function NowPage() {
           <p className="text-ink-2">
             Running <strong className="text-ink">Vantix Strategies</strong> full time as of this
             month &mdash; a firm of forward deployed engineers who embed with client teams and ship
-            production AI systems (RAG pipelines, agents, and data platforms) in under six weeks.
+            production AI systems (RAG pipelines, agents, and data platforms).
           </p>
           <p className="text-ink-2 mt-3">
-            The first engagement is <strong className="text-ink">Umbrage</strong>, a Bain &amp;
+            Right now that means <strong className="text-ink">Umbrage</strong>, a Bain &amp;
             Company subsidiary, where I&rsquo;m Director of AI Engineering, leading AI work across
             their client engagements.
           </p>

@@ -93,7 +93,7 @@ export const STATUS: readonly StatusCell[] = [
     key: "Building",
     value: "Vantix Strategies, full time",
     detail:
-      "Left UnitedHealthcare in August to run my forward deployed engineering firm full time. First engagement: Director of AI Engineering at Umbrage, a Bain & Company subsidiary.",
+      "Left UnitedHealthcare in August to run my forward deployed engineering firm full time, currently embedded at Umbrage, a Bain & Company subsidiary, as Director of AI Engineering.",
     since: "2026-08-22",
   },
   {

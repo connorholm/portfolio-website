@@ -39,7 +39,7 @@ export const ROLES: readonly Role[] = [
     end: null,
     location: "Remote",
     summary:
-      "Vantix's first engagement, and the reason I left UnitedHealthcare. Umbrage is a Bain & Company subsidiary; I lead AI engineering across their client engagements, embedding with the teams that own a business process to work out which part of it genuinely benefits from a model and which part just needs better software, then shipping the result.",
+      "The reason I left UnitedHealthcare, delivered through Vantix. Umbrage is a Bain & Company subsidiary; I lead AI engineering across their client engagements, embedding with the teams that own a business process to work out which part of it genuinely benefits from a model and which part just needs better software, then shipping the result.",
     tags: ["AI engineering", "Client delivery", "RAG", "Agents"],
   },
   {

@@ -43,10 +43,10 @@ export default function AboutPage() {
                   Vantix Strategies
                 </a>
                 , the firm I founded in January 2026: a boutique group of forward deployed engineers
-                who embed inside client teams and ship production AI systems, not strategy decks, in
-                under six weeks, with the client owning the IP. In August 2026 I left my full-time
-                job to run it full time, starting with Umbrage, a Bain &amp; Company subsidiary,
-                where I&rsquo;m Director of AI Engineering.
+                who embed inside client teams and ship production AI systems with the client owning
+                the IP. In August 2026 I left my full-time
+                job to run it full time; I&rsquo;m now Director of AI Engineering at Umbrage, a Bain
+                &amp; Company subsidiary.
               </p>
               <p>
                 The full-time job was UnitedHealthcare. I spent a year there as an AI Engineer,
