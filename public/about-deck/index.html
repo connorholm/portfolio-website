@@ -443,7 +443,7 @@ body.is-help #help { display: flex; }
    Small screens and print both unwind the 3D into a plain document.
    Below 768px this is a readable page rather than a deck pretending to fit.
    ========================================================================== */
-@media (max-width: 767px), print {
+@media (max-width: 899px), print {
   html, body { overflow: auto; height: auto; }
   #stage, #world {
     position: static; transform: none !important;
@@ -459,29 +459,78 @@ body.is-help #help { display: flex; }
   #world-chart, #profile-chart { height: auto; }
   #world-chart svg, #profile-chart svg { height: auto; }
   .step-inner { height: auto; min-height: 0; box-shadow: none; }
-  .cols.c2, .cols.c3, .cols.split, .cols.media { grid-template-columns: 1fr; }
+  /* Several steps set grid-template-columns inline, so the single-column
+     collapse has to outrank them. Without this the projects and Aspen steps
+     resolved to a 0px text column with the photos pushed off the screen. */
+  .cols, .cols.c2, .cols.c3, .cols.split, .cols.media { grid-template-columns: 1fr !important; }
+  .cols > * { min-width: 0; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stat { border-right: none; border-bottom: 1px solid var(--rule); }
 }
 
-@media (max-width: 767px) {
-  body { padding: 20px 14px 40px; }
-  .step-inner { padding: 30px 24px; }
+@media (max-width: 899px) {
+  body { padding: 18px 16px 48px; }
+  .step-inner { padding: 26px 20px 30px; }
+  .step { margin-bottom: 22px; }
   .rail { display: none; }
-  h1.display { font-size: 60px; }
-  h2.h { font-size: 38px; }
-  h2.h.sm { font-size: 32px; }
-  .org { font-size: 24px; }
-  p.lede { font-size: 20px; max-width: none; }
-  p.body { font-size: 17px; }
-  .quote { font-size: 26px; }
-  .cluster li, .card .out { font-size: 16px; }
-  .stat .v { font-size: 30px; }
-  table.log td { font-size: 15px; }
-  table.log td.name { font-size: 15px; }
-  .photo { height: 240px; }
-  .eyebrow { font-size: 13px; gap: 10px; }
+
+  /* A numbered marker above each panel, so seventeen sections of scrolling
+     still tell you where you are. Numbered by counter, not by markup. */
+  #world { counter-reset: stepnum; }
+  .step { counter-increment: stepnum; }
+  .step::before {
+    content: counter(stepnum, decimal-leading-zero) " / 17";
+    display: block; font-family: var(--font-mono); font-size: 11px;
+    font-weight: 500; letter-spacing: .18em; color: var(--accent);
+    margin: 0 0 9px 2px;
+  }
+
+  h1.display { font-size: 56px; }
+  h2.h { font-size: 34px; }
+  h2.h.sm { font-size: 28px; }
+  .org { font-size: 22px; }
+  .eyebrow { display: block; font-size: 11px; letter-spacing: .14em; line-height: 1.7; margin-bottom: 16px; }
   .eyebrow::after { display: none; }
+  .eyebrow b { padding: 0 4px; }
+  p.lede { font-size: 19px; max-width: none !important; }
+  p.body { font-size: 16px; max-width: none !important; }
+  ul.bullets { max-width: none !important; }
+  ul.bullets li { font-size: 16px; padding-left: 20px; margin-bottom: 10px; }
+  .cluster li, .card .out { font-size: 15px; }
+  .card { padding: 18px 16px; }
+  .card h3 { font-size: 22px; }
+  .card .yr { font-size: 11px; }
+  .tag { font-size: 12px; padding: 4px 8px; }
+  .stamp { position: static; margin-top: 18px; text-align: right; font-size: 11px; }
+
+  .stat { padding: 14px 12px 4px; }
+  .stats .stat:last-child { border-bottom: none; }
+  .stat .v { font-size: 26px; }
+  .stat .l { font-size: 11px; }
+  .stat .n { font-size: 14px; }
+
+  /* The race log is five columns wide and will not fit a phone. The distance
+     is already in every race name ("Superior 100 Miler", "Afton 50K"), so
+     that column goes; overflow-x stays as a backstop for long names. */
+  #races .cols > div:first-child th:nth-child(3),
+  #races .cols > div:first-child td:nth-child(3) { display: none; }
+  #races .cols > div { overflow-x: auto; }
+  table.log { font-size: 13px; }
+  table.log th { font-size: 10px; padding-right: 6px; padding-bottom: 8px; }
+  table.log td { font-size: 13px; padding: 9px 6px 9px 0; }
+  table.log td.name { font-size: 13px; }
+
+  /* Charts size to their own aspect rather than a desktop-sized box. */
+  #world-chart { height: auto !important; }
+  #profile-chart { margin-top: 10px !important; }
+
+  .photo { height: 230px; }
+  #iceland-japan h3, #dog h3 { font-size: 22px !important; }
+
+  /* The two project screenshots stay side by side: stacking every image made
+     the page needlessly long. */
+  #projects .cols > div:last-child { flex-direction: row !important; }
+  #projects .cols > div:last-child .photo { flex: 1 1 0; min-width: 0; height: 150px; }
 }
 
 @media print {
@@ -1030,7 +1079,12 @@ var stage = document.getElementById("stage");
 var world = document.getElementById("world");
 var body = document.body;
 var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-var compact = window.matchMedia("(max-width: 767px)").matches;
+/* Below this the deck becomes a document. It is set by readability, not by
+   device: at 768px the camera scale is 0.48, which renders body text at an
+   effective 10px in a panel filling a third of a tall screen. Keep in step
+   with the @media blocks above. */
+var COMPACT_MQ = "(max-width: 899px)";
+var compact = window.matchMedia(COMPACT_MQ).matches;
 
 /* Steps, read straight off the markup so the HTML stays the source of truth
    for both the deck and the printed/mobile fallback. */
@@ -1598,7 +1652,7 @@ document.addEventListener("touchstart", wakeChrome, { passive: true });
 
 window.addEventListener("resize", function () {
   var wasCompact = compact;
-  if (window.matchMedia("(max-width: 767px)").matches !== wasCompact) {
+  if (window.matchMedia(COMPACT_MQ).matches !== wasCompact) {
     applyMode();
     return;
   }
@@ -1702,7 +1756,7 @@ function buildDeck() {
 
 /* Small screens read the deck as a document: no camera, everything visible. */
 function applyMode() {
-  compact = window.matchMedia("(max-width: 767px)").matches;
+  compact = window.matchMedia(COMPACT_MQ).matches;
 
   if (compact) {
     body.classList.remove("is-overview");
